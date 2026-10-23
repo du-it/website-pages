@@ -1,0 +1,12 @@
+/* ==========================================================================
+   MAIN.CSS – Zentraler Einstiegspunkt für alle Styles
+   Definiert die Layer-Ordnung und importiert die Basis-Dateien.
+   ========================================================================== */
+
+/* 1. Layer-Ordnung definieren (je weiter rechts, desto höher die Priorität) */
+@layer reset, base, components, sections, post;
+
+/* 2. Basis-Dateien importieren und den Layern zuweisen */
+@import url('base.css') layer(base);
+@import url('components.css') layer(components);
+@import url('sections.css') layer(sections);

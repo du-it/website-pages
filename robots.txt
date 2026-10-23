@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.du-it.de/sitemap.xml

@@ -1,0 +1,749 @@
+/* ==========================================================================
+   CUSTOM CSS – du-it Portfolio
+   Logisch gruppierte Blöcke. Jede Klasse ist kommentiert.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   GLOBAL DESIGN TOKENS
+   Zentrale Theme-Variablen. Werden von allen folgenden Klassen referenziert.
+   ========================================================================== */
+
+:root {
+    /* Grundlegendes Theme (Light Mode Default) */
+    --bg-primary: #f8fafc;          /* Seitenhintergrund */
+    --text-primary: #0f172a;        /* Primärtextfarbe */
+    --text-muted: #475569;          /* Sekundärtextfarbe (lesbares Grau) */
+
+    /* UI-Flächen & Karten (Light Mode) */
+    --bg-card: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    --border-card: #cbd5e1;
+    --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08),
+    0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+    /* Gradient-Positionen (Steuerung des Verlaufs) */
+    --gradient-mix-ratio: 70%;      /* Mischverhältnis mit currentColor */
+    --gradient-pos-accent: 0%;
+    --gradient-pos-mid: 45%;
+    --gradient-pos-end: 100%;
+
+    /* Brand-Gradient (Blau → Sky → Cyan) */
+    --gradient-brand-accent: #38bdf8;
+    --gradient-brand-mid: #38bdf8;
+    --gradient-brand-end: #a5f3fc;
+
+    /* Warm-Gradient (Gold / Champagner) */
+    --gradient-warm-accent: #d97706;
+    --gradient-warm-mid: #FDE047;
+    --gradient-warm-end: #D97706;
+
+    /* Silver-Gradient (Metallic) */
+    --gradient-silver-accent: #64748b;
+    --gradient-silver-mid: #94a3b8;
+    --gradient-silver-end: #334155;
+
+    /* Innovations-Sektion (Purple) */
+    --color-innovation: #9333ea;          /* purple-600 (Light) */
+    --color-innovation-hover: #a855f7;    /* purple-500 */
+    --color-innovation-bg: rgba(168, 85, 247, 0.1); /* purple-500/10 */
+    --color-innovation-border: rgba(168, 85, 247, 0.3); /* purple-500/30 */
+}
+
+html.dark {
+    /* Grundlegendes Theme (Dark Mode) */
+    --bg-primary: #000000;
+    --text-primary: #f8fafc;
+
+    /* UI-Flächen & Karten (Dark Mode) */
+    --bg-card: rgba(15, 23, 42, 0.75);
+    --border-card: rgba(51, 65, 85, 0.8);
+    --shadow-card: 0 0 25px -5px rgba(0, 0, 0, 0.5);
+
+    /* Farben für Innovation Sektion */
+    --color-innovation: #c084fc;          /* purple-400 (Dark) */
+    --color-innovation-hover: #a855f7;    /* purple-500 */
+    --color-innovation-bg: rgba(168, 85, 247, 0.2);
+    --color-innovation-border: rgba(168, 85, 247, 0.5);
+}
+
+
+/* ==========================================================================
+   LOKALE FONTS (DSGVO-konform)
+   Instrument Serif wird für alle Überschriften genutzt.
+   ========================================================================== */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Instrument Serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/instrument-serif-v5-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Instrument Serif';
+    font-style: italic;
+    font-weight: 400;
+    src: url('./fonts/instrument-serif-v5-latin-italic.woff2') format('woff2');
+}
+
+
+/* ==========================================================================
+   GLOBALE TYPOGRAFIE & BASIS
+   Grundschrift, Hintergrund, Überschriften-Standard.
+   ========================================================================== */
+
+/* Standard-Fließtext */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Wurzel-Element (Theme-Farben + sanftes Scrollen) */
+html {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+}
+
+/* Alle Überschriften nutzen projektweit Instrument Serif */
+h1, h2, h3, h4, .font-serif-heading {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+}
+
+
+/* ==========================================================================
+   KOMPONENTEN – Überschriften
+   ========================================================================== */
+
+/* Kleine Sektions-Überschrift (Eyebrow) über dem Haupttitel.
+   Farbe: Purple, um sich von blauen und goldenen <h3> abzuheben. */
+.section-eyebrow {
+    font-family: var(--font-mono), monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;          /* tracking-widest */
+    font-size: 0.75rem;             /* text-xs */
+    color: #7c3aed;                 /* purple-600 (Light) */
+    margin-bottom: 0.5rem;          /* mb-2 */
+}
+html.dark .section-eyebrow {
+    color: #c084fc;                 /* purple-400 (Dark) */
+}
+
+/* ==========================================================================
+   KOMPONENTEN – Navigation (Header)
+   ========================================================================== */
+
+/* Standard-Navigationslink (Desktop & Mobile) */
+.nav-link {
+    color: #334155;                 /* slate-700 (Light) */
+    transition: color 0.2s ease;
+}
+.nav-link:hover {
+    color: #0052a3;                 /* brand-600 */
+}
+html.dark .nav-link {
+    color: #cbd5e1;                 /* slate-300 (Dark) */
+}
+html.dark .nav-link:hover {
+    color: #38bdf8;                 /* brand-accent */
+}
+
+/* Navigationslink mit Icon (z.B. Innovationsfelder) */
+.nav-link-icon {
+    color: #334155;
+    transition: color 0.2s ease;
+}
+.nav-link-icon:hover {
+    color: #0052a3;
+}
+html.dark .nav-link-icon {
+    color: #cbd5e1;
+}
+html.dark .nav-link-icon:hover {
+    color: #38bdf8;
+}
+
+
+/* ==========================================================================
+   KOMPONENTEN – Buttons
+   Einheitlicher Look für Buttons (z.B. Copy-Email-Button).
+   ========================================================================== */
+/* Sekundärer Button (z.B. "E-Mail-Adresse kopieren") */
+.btn-copy {
+    width: 100%;
+    padding: 0.75rem 1.5rem;        /* py-3 px-6 */
+    border-radius: 0.75rem;         /* rounded-xl */
+    font-size: 0.75rem;             /* text-xs */
+    font-weight: 500;               /* font-medium */
+    background-color: #f1f5f9;      /* slate-100 (Light) */
+    color: #334155;                 /* slate-700 (Light) */
+    border: 1px solid #e2e8f0;      /* slate-200 (Light) */
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-copy:hover {
+    background-color: #e2e8f0;      /* slate-200 */
+}
+html.dark .btn-copy {
+    background-color: #020617;      /* slate-950 */
+    color: #cbd5e1;                 /* slate-300 */
+    border-color: #1e293b;          /* slate-800 */
+}
+html.dark .btn-copy:hover {
+    background-color: #1e293b;      /* slate-800 */
+}
+
+/* ==========================================================================
+   KOMPONENTEN – Filter-Buttons
+   Einheitlicher Look für Filter-Buttons (z.B. Tech-Stack, Blog).
+   ========================================================================== */
+
+/* Basis-Zustand (inaktiv) */
+.btn-filter {
+    padding: 0.5rem 1rem;           /* px-4 py-2 */
+    border-radius: 0.5rem;          /* rounded-lg */
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;             /* text-xs */
+    font-weight: 600;               /* font-semibold */
+    border: 1px solid #1e293b;      /* border-slate-800 */
+    background-color: rgba(15, 23, 42, 0.8); /* bg-slate-900/80 */
+    color: #cbd5e1;                 /* text-slate-300 */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-filter:hover {
+    border-color: #334155;          /* hover:border-slate-700 */
+    color: #ffffff;                 /* hover:text-white */
+}
+
+/* Aktiver Zustand */
+.btn-filter.active {
+    background-color: #0052a3;      /* brand-600 */
+    color: #ffffff;
+    border-color: #0066cc;          /* brand-500 */
+}
+
+
+/* ==========================================================================
+   KOMPONENTEN – Karten
+   Einheitliche Basis für alle Karten im Projekt.
+   ========================================================================== */
+
+/* Basis-Karte: durchscheinend mit Blur (Smoke-Effekt bleibt sichtbar) */
+.card-surface {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Sekundärtext in Karten (ersetzt manuelle text-slate-500 / text-slate-400) */
+.card-surface-muted {
+    color: #475569;                 /* slate-600 (Light) */
+}
+html.dark .card-surface-muted {
+    color: #cbd5e1;                 /* slate-300 (Dark) */
+}
+
+/* Optionale Karte ohne Durchscheinen (für Sektionen, in denen der Smoke
+   nicht durch die Karte scheinen soll). Zusätzlich zu .card-surface nutzen. */
+.card-solid {
+    background-color: #ffffff;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+html.dark .card-solid {
+    background-color: #0f172a;      /* slate-900 */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+/* Badge in Karten (z.B. Skill-Cards). Farbe: blasses Purple im Light Mode. */
+.card-badge {
+    position: absolute;
+    top: 0.5rem;                    /* top-2 */
+    right: 0.5rem;                  /* right-2 */
+    font-family: var(--font-mono), monospace;
+    font-size: 0.5625rem;           /* 9px */
+    padding: 0.125rem 0.375rem;     /* py-0.5 px-1.5 */
+    border-radius: 0.25rem;
+    background-color: #f3e8ff;      /* purple-100 */
+    color: #6b21a8;                 /* purple-800 */
+    border: 1px solid #e9d5ff;      /* purple-200 */
+}
+html.dark .card-badge {
+    background-color: #1e293b;      /* slate-800 */
+    color: #38bdf8;                 /* brand-accent */
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* Projekt-Karte: spezifische Karte für die Projekt-Referenzen */
+.card-project {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   KOMPONENTEN – Footer
+   ========================================================================== */
+
+.footer {
+    background-color: #f1f5f9;      /* slate-100 (Light) – hebt sich vom bg-slate-50 des Bodys ab */
+    border-top: 1px solid #e2e8f0;  /* slate-200 (Light) */
+    padding: 1.5rem 0;                /* py-12 */
+}
+html.dark .footer {
+    background-color: #020617;      /* slate-950 (Dark) */
+    border-top-color: #1e293b;      /* slate-800 */
+}
+
+.footer-text {
+    color: #475569;                 /* slate-600 (Light) */
+}
+html.dark .footer-text {
+    color: #94a3b8;                 /* slate-400 (Dark) */
+}
+
+.footer-text-muted {
+    color: #64748b;                 /* slate-500 (Light) */
+}
+html.dark .footer-text-muted {
+    color: #64748b;                 /* slate-500 (Dark) */
+}
+
+/* ==========================================================================
+   EFFEKTE – Hover-Textfarbe für klickbare Karten
+   Die Basis-Regel greift für alle Karten mit der Klasse .hover-text.
+   Die Farbe wird über die CSS-Variable --hover-text-color gesetzt.
+   ========================================================================== */
+
+/* Basis: Sanfter Übergang für die Textfarbe */
+.hover-text h2,
+.hover-text h4 {
+    transition: color 0.3s ease;
+}
+
+/* Hover-Effekt: Textfarbe wechselt zur definierten Variable */
+.hover-text:hover h2,
+.hover-text:hover h4 {
+    color: var(--hover-text-color, #38bdf8); /* Standard: brand-accent */
+}
+
+/* Farb-Modifier für die Textfarbe */
+.hover-text-cyan:hover h2,
+.hover-text-cyan:hover h4 {
+    --hover-text-color: #38bdf8; /* brand-accent */
+}
+
+.hover-text-purple:hover h2,
+.hover-text-purple:hover h4 {
+    --hover-text-color: #c084fc; /* purple-400 */
+}
+
+.hover-text-emerald:hover h2,
+.hover-text-emerald:hover h4 {
+    --hover-text-color: #34d399; /* emerald-400 */
+}
+
+.hover-text-orange:hover h2,
+.hover-text-orange:hover h4 {
+    --hover-text-color: #fb923c; /* orange-400 */
+}
+
+/* ==========================================================================
+   KOMPONENTEN – Gradient-Text
+   Theme-sensitiver Verlauf auf Überschriften.
+   ========================================================================== */
+
+/* Haupt-Markenverlauf (Blau) */
+.text-gradient-brand {
+    background: linear-gradient(
+            135deg,
+            color-mix(in srgb, currentColor var(--gradient-mix-ratio), var(--gradient-brand-accent)) var(--gradient-pos-accent),
+            var(--gradient-brand-mid) var(--gradient-pos-mid),
+            var(--gradient-brand-end) var(--gradient-pos-end)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Silbriger / Metallischer Verlauf */
+.text-gradient-silver {
+    background: linear-gradient(
+            135deg,
+            color-mix(in srgb, currentColor var(--gradient-mix-ratio), var(--gradient-silver-accent)) var(--gradient-pos-accent),
+            var(--gradient-silver-mid) var(--gradient-pos-mid),
+            var(--gradient-silver-end) var(--gradient-pos-end)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Warmer Champagner / Gold-Verlauf */
+.text-gradient-warm {
+    background: linear-gradient(
+            135deg,
+            color-mix(in srgb, currentColor var(--gradient-mix-ratio), var(--gradient-warm-accent)) var(--gradient-pos-accent),
+            var(--gradient-warm-mid) var(--gradient-pos-mid),
+            var(--gradient-warm-end) var(--gradient-pos-end)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+/* ==========================================================================
+   KOMPONENTEN – Header (Glassmorphism)
+   ========================================================================== */
+
+/* Halbtransparenter Header mit Blur (Light Mode) */
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+html.dark .glass {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* ==========================================================================
+   KOMPONENTEN – SECTIONS
+   ========================================================================== */
+
+/* ------------------- */
+/* INNOVATIONS SECTION */
+/* ------------------- */
+
+/* Reagenzglas-Icon im Header (korrespondiert mit Innovations-Sektion) */
+.innovation-icon {
+    color: var(--color-innovation);
+}
+
+/* Tabs (Desktop) */
+.innovation-tab {
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    background-color: #f1f5f9;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+}
+.innovation-tab:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+html.dark .innovation-tab {
+    border-color: #334155;
+    background-color: #1e293b;
+    color: #cbd5e1;
+}
+html.dark .innovation-tab:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+.innovation-tab.active {
+    background-color: var(--color-innovation);
+    border-color: var(--color-innovation-hover);
+    color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.25);
+}
+
+/* Karten (innerhalb der Panes) */
+.innovation-card {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.innovation-card:hover {
+    border-color: var(--color-innovation-border);
+}
+html.dark .innovation-card {
+    border-color: #1e293b;
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Banner */
+.innovation-banner {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #e9d5ff;
+    background: linear-gradient(to right, rgba(233, 213, 255, 0.5), #ffffff, #ffffff);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+html.dark .innovation-banner {
+    border-color: var(--color-innovation-border);
+    background: linear-gradient(to right, rgba(88, 28, 135, 0.3), #0f172a, #0f172a);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Akkordeon */
+.innovation-accordion {
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+html.dark .innovation-accordion {
+    border-color: #1e293b;
+    background-color: rgba(15, 23, 42, 0.9);
+}
+
+/* Header eines Innovations-Panes (Badge, Titel, Beschreibung) */
+.innovation-pane-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-innovation-border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .innovation-pane-header {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+/* Linker Block: Badge und Titel untereinander */
+.innovation-pane-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Badge ("Innovationsfeld I") */
+.innovation-pane-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: var(--color-innovation-bg);
+    border: 1px solid var(--color-innovation-border);
+    color: var(--color-innovation);
+    align-self: flex-start; /* Badge nimmt nicht die volle Breite ein */
+}
+
+/* Titel des Panes */
+.innovation-pane-title {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+}
+@media (min-width: 640px) {
+    .innovation-pane-title {
+        font-size: 1.875rem;
+    }
+}
+
+/* Beschreibung des Panes */
+.innovation-pane-desc {
+    color: #475569;
+    font-size: 0.75rem;
+    max-width: 28rem;
+}
+html.dark .innovation-pane-desc {
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   EFFEKTE – glow-hover
+   Farbige Leuchteffekte beim Überfahren von Karten.
+   Basis-Klasse: .glow-hover / .glow-effect
+   Farb-Modifier: .glow-blue, .glow-emerald, .glow-purple, .glow-orange
+   ========================================================================== */
+
+/* Basis für alle Glow-Karten (Transition) */
+.card-surface.glow-hover,
+.glow-effect {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Farb-Modifier (Standard: Blau, falls keine Modifier-Klasse gesetzt ist) */
+.card-surface.glow-hover:hover,
+.glow-effect:hover {
+    border-color: var(--glow-color, rgba(14, 165, 233, 0.55));
+    box-shadow: 0 0 20px -5px var(--glow-color, rgba(14, 165, 233, 0.55)),
+    0 0 40px -10px var(--glow-color, rgba(14, 165, 233, 0.2));
+}
+
+/* Modifier: Blau (Brand) */
+.card-surface.glow-hover.glow-blue:hover,
+.glow-effect.glow-blue:hover {
+    --glow-color: rgba(14, 165, 233, 0.55);
+}
+
+/* Modifier: Emerald (Grün) */
+.card-surface.glow-hover.glow-emerald:hover,
+.glow-effect.glow-emerald:hover {
+    --glow-color: rgba(16, 185, 129, 0.55);
+}
+
+/* Modifier: Purple (Lila) */
+.card-surface.glow-hover.glow-purple:hover,
+.glow-effect.glow-purple:hover {
+    --glow-color: rgba(168, 85, 247, 0.55);
+}
+
+/* Modifier: Orange (Smoke-Farbe) */
+.card-surface.glow-hover.glow-orange:hover,
+.glow-effect.glow-orange:hover {
+    --glow-color: rgba(249, 115, 22, 0.55);
+}
+
+/* Dark Mode: Etwas intensivere Schatten */
+html.dark .card-surface.glow-hover:hover,
+html.dark .glow-effect:hover {
+    box-shadow: 0 0 25px -5px var(--glow-color, rgba(14, 165, 233, 0.55)),
+    0 0 50px -10px var(--glow-color, rgba(14, 165, 233, 0.2));
+}
+
+/* ==========================================================================
+   EFFEKTE – Custom Scrollbar
+   Webkit-Browser (Chrome, Edge, Safari) und Firefox.
+   ========================================================================== */
+
+/* Webkit-Scrollbar: Basis (Light Mode) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;        /* slate-100 (Light) */
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;        /* slate-300 (Light) */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;        /* slate-400 */
+}
+
+/* Webkit-Scrollbar: Dark Mode (mit !important, um Überschreibungen zu verhindern) */
+html.dark ::-webkit-scrollbar-track {
+    background: #0f172a !important;        /* slate-900 */
+}
+html.dark ::-webkit-scrollbar-thumb {
+    background: #334155 !important;        /* slate-700 */
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9 !important;        /* sky-500 */
+}
+
+/* Firefox-Scrollbar */
+html {
+    scrollbar-color: #cbd5e1 #f1f5f9; /* thumb track (Light) */
+    scrollbar-width: thin;
+}
+html.dark {
+    scrollbar-color: #334155 #0f172a !important; /* thumb track (Dark) */
+}
+
+/* Scrollbar innerhalb des Projekt-Modals (immer dunkel, unabhängig vom Theme) */
+#modal-projects-list {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #0f172a; /* thumb track */
+}
+
+#modal-projects-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modal-projects-list::-webkit-scrollbar-track {
+    background: #0f172a !important; /* slate-900 */
+}
+
+#modal-projects-list::-webkit-scrollbar-thumb {
+    background: #334155 !important; /* slate-700 */
+    border-radius: 4px;
+}
+
+#modal-projects-list::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9 !important; /* sky-500 */
+}
+
+
+/* ==========================================================================
+   SYSTEM – Smoke-Canvas & Pointer-Events
+   Der Smoke-Effekt liegt hinter allen Sektionen. Sektionen sind "durchlässig"
+   für Maus-Events, interaktive Elemente werden explizit freigeschaltet.
+   ========================================================================== */
+
+/* Smoke-Canvas: füllt das gesamte Fenster, liegt hinter allem */
+canvas#smoke-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: transparent !important;
+    pointer-events: auto;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Sektionen sind für Maus-Events "durchlässig" (Smoke bleibt reaktiv) */
+section, footer {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Interaktive Elemente werden explizit freigeschaltet (Klicks, Hover, Textauswahl) */
+a, button, input, textarea, select,
+.card,
+.card-surface,
+.card-surface-muted,
+.card-badge,
+.glow-effect,
+pre,
+code,
+[role="button"],
+#skill-grid > div,
+#projects-container > div {
+    pointer-events: auto;
+}
+
+/* Sektionen bleiben zu 100% transparent für den Smoke-Effekt */
+main section {
+    background-color: transparent !important;
+    border: none !important;
+}

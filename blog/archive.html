@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Archiv - du-it</title>
+
+    <link rel="stylesheet" href="../css/devicon.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/tabler-icons.min.css">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../css/tailwind.css">
+
+    <!-- Lokale Einstellungen und Fonts -->
+    <link rel="stylesheet" href="../css/blog.css">
+
+    <script src="../js/theme-loader.js"></script>
+    <script type="module" src="../js/app.js"></script>
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+<!-- Dynamischer Header (wird über app.js -> BlogOverviewHeader gesteuert) -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300"></header>
+
+<!-- Hauptbereich mit angepasstem Padding oben (pt-28) wegen des fixierten Headers -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full flex-grow">
+    <header class="mb-8">
+        <h1 class="text-3xl sm:text-5xl font-semibold text-slate-900 dark:text-white tracking-tight mb-4">
+            Blog Archiv
+        </h1>
+        <p class="card-surface-muted font-mono text-sm">
+            Alle veröffentlichten Artikel, Tutorials und Praxistipps im Überblick.
+        </p>
+    </header>
+
+    <!-- Filter-Buttons (werden dynamisch befüllt) -->
+<!--    <div id="filter-container" class="w-full flex flex-nowrap overflow-x-auto gap-2 pb-2 px-4 mb-10 no-scrollbar">-->
+<!--        &lt;!&ndash; Populated dynamically via BlogController &ndash;&gt;-->
+<!--    </div>-->
+    <!-- Filter-Buttons (werden dynamisch befüllt) -->
+    <div class="relative w-full mb-10">
+        <button class="btn-filter-nav btn-filter-nav-left" onclick="document.getElementById('filter-container').scrollBy({left: -200, behavior: 'smooth'})">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div id="filter-container" class="w-full flex flex-nowrap overflow-x-auto gap-2 pb-2 px-10 no-scrollbar">
+            <!-- Populated dynamically via BlogController -->
+        </div>
+        <button class="btn-filter-nav btn-filter-nav-right" onclick="document.getElementById('filter-container').scrollBy({left: 200, behavior: 'smooth'})">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Kacheln werden hier durch js/blog-controller.js injiziert -->
+    <div id="archive-blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</main>
+
+<footer id="main-footer"></footer>
+
+<!-- Skript-Einbindung -->
+<script type="module" src="../js/app.js"></script>
+</body>
+</html>

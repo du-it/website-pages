@@ -1,0 +1,28 @@
+{
+  "_color": "Gültige Farb-Aliases (Tailwind): cyan, emerald, purple, blue, orange, red, green, yellow, pink, teal, indigo, rose, amber, sky, slate. RGB/Hex-Werte werden nicht unterstützt. Fallback ist 'cyan'.",
+  "categories": [
+    { "id": "all", "label": "Alle Beiträge" },
+    { "id": "java", "label": "Java Backend", "color": "amber" },
+    { "id": "kotlin", "label": "Kotlin", "color": "indigo" },
+    { "id": "architektur", "label": "Architektur", "color": "sky" },
+    { "id": "ki", "label": "Enterprise KI", "color": "teal" },
+    { "id": "blockchain", "label": "Blockchain & DLT", "color": "slate" }
+  ],
+  "posts": [
+    {
+      "id": "remove-inactive-accounts",
+      "visible": true,
+      "metaPath": "blog/posts/java/remove-inactive-accounts/remove-inactive-accounts.json"
+    },
+    {
+      "id": "java-streams-removeif",
+      "visible": false,
+      "metaPath": "blog/posts/java/java-streams-removeif/java-streams-removeif.json"
+    },
+    {
+      "id": "spring-ai-json-output",
+      "visible": false,
+      "metaPath": "blog/posts/ai/spring-ai-json-output/spring-ai-json-output.json"
+    }
+  ]
+}

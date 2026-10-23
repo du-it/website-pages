@@ -1,0 +1,64 @@
+/* ==========================================================================
+   POST-SPEZIFISCHE STYLES – remove-inactive-accounts
+   Wird nur geladen, wenn dieser Artikel angezeigt wird.
+   Der Inhalt wird in den Layer "post" gepackt (siehe main.css/blog.css).
+   ========================================================================== */
+
+@layer post {
+    /* Fließtext */
+    .article-body p {
+        color: #475569; /* slate-600 (Light) */
+    }
+    html.dark .article-body p {
+        color: #cbd5e1; /* slate-300 (Dark) */
+    }
+
+    /* Überschriften im Artikel */
+    .article-body h2 {
+        color: #0f172a; /* slate-900 (Light) */
+    }
+    html.dark .article-body h2 {
+        color: #ffffff;
+    }
+
+    /* Der Exkurs-Kasten */
+    .article-excursion {
+        background-color: #f0f9ff; /* sky-50 (Light) */
+        border-color: #bae6fd;     /* sky-200 */
+    }
+    html.dark .article-excursion {
+        background-color: rgba(8, 47, 73, 0.2); /* sky-950/20 */
+        border-color: rgba(12, 74, 110, 0.5);  /* sky-900/50 */
+    }
+
+    /* Der "Funktionsweise"-Kasten */
+    .article-howto {
+        background-color: #f0f9ff; /* sky-50 (Light) */
+    }
+    html.dark .article-howto {
+        background-color: rgba(15, 23, 42, 0.6); /* slate-900/60 */
+    }
+
+    /* Der Benchmark-Container */
+    .article-benchmark {
+        background-color: #f8fafc; /* slate-50 (Light) */
+        border-color: #e2e8f0;     /* slate-200 */
+    }
+    html.dark .article-benchmark {
+        background-color: rgba(15, 23, 42, 0.8); /* slate-900/80 */
+        border-color: rgba(51, 65, 85, 0.6);     /* slate-700/60 */
+    }
+
+    /* Code-Blöcke bleiben immer dunkel (unabhängig vom Theme) */
+    .code-block {
+        background-color: #2b2b2b;
+        color: #a9b7c6;
+        border: 1px solid #1e293b;
+        border-radius: 0.75rem;
+        padding: 1rem;
+        font-family: var(--font-mono), monospace;
+        font-size: 0.875rem;
+        overflow-x: auto;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+}

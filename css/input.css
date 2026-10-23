@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Dark Mode über .dark-Klasse (Sie nutzen theme-loader.js + BaseHeader) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* ---- Brand ---- */
+    --color-brand-500: #0066cc;
+    --color-brand-600: #0052a3;
+    /* FEHLT und wird überall verwendet: text-brand-accent, bg-brand-accent */
+    --color-brand-accent: #38bdf8;
+
+    /* ---- Zusätzliche Brand-Stufen, die in projects.js referenziert werden ---- */
+    /* text-brand-300 (in projects.js: dark:text-brand-300) */
+    --color-brand-300: #7dd3fc;   /* Vorschlag: helleres Sky-Blau */
+    /* text-brand-700 (in projects.js: text-brand-700) */
+    --color-brand-700: #0369a1;
+
+    /* text-brand-400 (in skills.js: text-brand-400) */
+    --color-brand-400: #38bdf8;
+
+    /* ---- Semantische Aliase (optional, aber sauber) ---- */
+    /* Nichts, was Sie aktuell brauchen – nur zur Info. */
+
+    /* ---- Fonts ---- */
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-serif: "Instrument Serif", Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Eigene @keyframes, falls Sie welche brauchen (aktuell keine) */

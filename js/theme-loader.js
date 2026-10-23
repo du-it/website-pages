@@ -1,0 +1,1 @@
+(function(){localStorage.getItem("theme")==="light"?(document.documentElement.classList.remove("dark"),document.documentElement.classList.add("light-mode")):document.documentElement.classList.add("dark")})();

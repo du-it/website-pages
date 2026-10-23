@@ -1,0 +1,54 @@
+@layer reset, base, components, sections, post;
+
+@import url('base.css') layer(base);
+@import url('components.css') layer(components);
+/* sections.css wird NICHT importiert, weil die Blog-Seiten die Innovations-Sektion nicht haben. */
+
+body {
+    background-color: var(--bg-primary);
+}
+
+.info-tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -0.25rem;
+    cursor: pointer;
+    background: none; /* Kein grauer Kreis mehr */
+    border: none;
+    padding: 0;
+    color: #0284c7; /* Ein kräftiges Blau für den Light Mode */
+    transition: color 0.2s ease;
+}
+
+.info-tooltip-btn:hover {
+    color: #0369a1; /* Dunkleres Blau beim Hover */
+}
+
+/* Das SVG auf Textgröße zwingen */
+.info-tooltip-btn svg {
+    width: 0.85rem;
+    height: 0.85rem;
+}
+
+/* Dark Mode */
+html.dark .info-tooltip-btn {
+    color: #38bdf8; /* Helles Sky-Blau */
+}
+
+html.dark .info-tooltip-btn:hover {
+    color: #7dd3fc;
+}
+
+/* Takeaway Box für Blog-Artikel */
+.article-takeaways {
+    background-color: #f8f5fc; /* Sehr helles Lila im Light Mode */
+    border: 1px solid #e9d5ff; /* Zarter lila Rahmen */
+    box-shadow: 0 4px 20px -5px rgba(168, 85, 247, 0.15); /* Leichter lila Glow */
+    backdrop-filter: blur(8px);
+}
+html.dark .article-takeaways {
+    background-color: rgba(88, 28, 135, 0.15); /* Dunkles Lila, transparent */
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.2);
+}

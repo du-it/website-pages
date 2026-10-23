@@ -1,0 +1,1 @@
+const n=new Set;export function onThemeChange(e){if(typeof e!="function")return()=>{};n.add(e);try{e(document.documentElement.classList.contains("dark"))}catch(t){console.error("[theme-events] initialer Aufruf fehlgeschlagen:",t)}return()=>n.delete(e)}export function emitThemeChange(e){n.forEach(t=>{try{t(e)}catch(o){console.error("[theme-events] Listener-Fehler:",o)}})}
