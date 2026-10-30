@@ -1,0 +1,18 @@
+{
+  "id": "spring-ai-json-output",
+  "title": "TEST: Deterministische JSON-Outputs in Spring AI mit Java 21 Records",
+  "category": "ki",
+  "categoryLabel": "Enterprise KI & Spring AI",
+  "date": "30. Sept 2026",
+  "updated": "30. Sept 2026",
+  "readTime": "6 Min.",
+  "excerpt": "Wie du mithilfe des BeanOutputConverters und Java 21 Records strukturierte, typsichere Antworten aus LLMs erzwingst – ohne Runtime-Crashes.",
+  "color": "purple",
+  "author": "Dirk Ulrich",
+  "contentPath": "posts/ai/spring-ai-json-output.html",
+  "takeaways": [
+    "BeanOutputConverter garantiert schema-konformes JSON.",
+    "Java 21 Records dienen als typsicheres Ziel-Model.",
+    "Keine fehleranfällige manuelle JSON-Parsing-Logik nötig."
+  ]
+}

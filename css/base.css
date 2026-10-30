@@ -1,0 +1,126 @@
+/* ==========================================================================
+   BASE.CSS – Design-Tokens, Fonts, globale Typografie, Scrollbar
+   Wird in den Layer "base" geladen (niedrigste Priorität nach reset).
+   ========================================================================== */
+
+@layer base {
+    /* --- Design Tokens --- */
+    :root {
+        color-scheme: light;
+
+        /* Grundlegendes Theme (Light Mode Default) */
+        --bg-primary: #f4ede4;   /* Cream / warmes Off-White */
+        --text-primary: #1f1a17;
+        --text-muted: #52525b;
+
+        /* UI-Flächen & Karten (Light Mode) */
+        /*--bg-card: linear-gradient(135deg, #ffffff 0%, #f4ede4 100%);*/ /* Gradient horizontal */
+        --bg-card: linear-gradient(180deg, #ffffff 0%, #f4ede4 100%); /* Gradient vertikal*/
+        --border-card: #e2dcd3; /* Ein sanfter, warmer Rand statt des kalten #cbd5e1 */
+        --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08),
+        0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+        /* Gradient-Positionen */
+        --gradient-mix-ratio: 70%;
+        --gradient-pos-accent: 0%;
+        --gradient-pos-mid: 45%;
+        --gradient-pos-end: 100%;
+
+        /* Brand-Gradient */
+        /*--gradient-brand-accent: #38bdf8;*/
+        /*--gradient-brand-mid: #38bdf8;*/
+        /*--gradient-brand-end: #a5f3fc;*/
+        --gradient-brand-accent: #1e3a8a; /* Tiefes Saphirblau */
+        --gradient-brand-mid: #60a5fa;    /* Helles Eisblau */
+        --gradient-brand-end: #1e3a8a;    /* Zurück zu Saphirblau */
+
+        /* Warm-Gradient */
+        --gradient-warm-accent: #d97706;
+        --gradient-warm-mid: #FDE047;
+        --gradient-warm-end: #D97706;
+
+        /* Silver-Gradient */
+        --gradient-silver-accent: #64748b;
+        --gradient-silver-mid: #94a3b8;
+        --gradient-silver-end: #334155;
+
+        /* Innovations-Sektion (Purple) */
+        --color-innovation: #9333ea;
+        --color-innovation-hover: #a855f7;
+        --color-innovation-bg: rgba(168, 85, 247, 0.1);
+        --color-innovation-border: rgba(168, 85, 247, 0.3);
+    }
+
+    html.dark {
+        color-scheme: dark;
+
+        --bg-primary: #000000;
+        --text-primary: #f8fafc;
+        --bg-card: rgba(15, 23, 42, 0.75);
+        --border-card: rgba(51, 65, 85, 0.8);
+        --shadow-card: 0 0 25px -5px rgba(0, 0, 0, 0.5);
+
+        --color-innovation: #c084fc;
+        --color-innovation-hover: #a855f7;
+        --color-innovation-bg: rgba(168, 85, 247, 0.2);
+        --color-innovation-border: rgba(168, 85, 247, 0.5);
+    }
+
+    /* --- Fonts --- */
+    @font-face {
+        font-display: swap;
+        font-family: 'Instrument Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: url('./fonts/instrument-serif-v5-latin-regular.woff2') format('woff2');
+    }
+    @font-face {
+        font-display: swap;
+        font-family: 'Instrument Serif';
+        font-style: italic;
+        font-weight: 400;
+        src: url('./fonts/instrument-serif-v5-latin-italic.woff2') format('woff2');
+    }
+
+    /* --- Globale Typografie & Basis --- */
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+    }
+    html {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        scroll-behavior: smooth;
+    }
+    /* Der Browser-Hintergrund MUSS die gleiche Farbe haben */
+    html, body {
+        background-color: var(--bg-primary) !important;
+        min-height: 100vh;
+        /* Verhindert, dass beim Gummiband-Effekt (Overscroll) Weiß durchblitzt */
+        overscroll-behavior-y: none;
+    }
+    h1, h2, h3, h4, .font-serif-heading {
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-weight: 400;
+    }
+
+    /* --- Scrollbar (Webkit) --- */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    html.dark ::-webkit-scrollbar-track { background: #0f172a !important; }
+    html.dark ::-webkit-scrollbar-thumb { background: #334155 !important; }
+    html.dark ::-webkit-scrollbar-thumb:hover { background: #0ea5e9 !important; }
+
+    /* --- Scrollbar (Firefox) --- */
+    html {
+        scrollbar-color: #cbd5e1 #f1f5f9;
+        scrollbar-width: thin;
+    }
+    html.dark {
+        scrollbar-color: #334155 #0f172a !important;
+    }
+}

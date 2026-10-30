@@ -1,0 +1,18 @@
+{
+  "id": "remove-inactive-accounts",
+  "title": "Java Streams: Inaktive Konten effizient entfernen",
+  "category": "java",
+  "categoryLabel": "Java Streams",
+  "date": "2025-02-25",
+  "updated": "2026-10-06",
+  "readTime": "5 Min.",
+  "excerpt": "Effiziente Bereinigung von Konten in großen Datensätzen.",
+  "author": "Dirk Ulrich",
+  "contentPath": "posts/java/remove-inactive-accounts/remove-inactive-accounts.html",
+  "takeaways": [
+    "Der ursprüngliche Ansatz allokiert eine zweite Collection.",
+    "Ein In-Place-Algorithmus reduziert den Speicherverbrauch von O(N) auf O(1).",
+    "Two-Pointer-Techniken sind in vielen Java-Szenarien äußerst nützlich.",
+    "Benchmarking zeigt erhebliche Einsparungen bei Laufzeit und Speicherverbrauch."
+  ]
+}

@@ -1,0 +1,158 @@
+/* ==========================================================================
+   SECTIONS.CSS – Sektionsspezifische Styles
+   Wird in den Layer "sections" geladen.
+   ========================================================================== */
+
+/*@layer sections {*/
+    /* --- Reagenzglas-Icon im Header --- */
+    .innovation-icon { color: var(--color-innovation); }
+
+    /* --- Tabs (Desktop) --- */
+    .innovation-tab {
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
+        font-family: var(--font-mono), monospace;
+        font-size: 0.875rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+        background-color: #f1f5f9;
+        color: #334155;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
+        cursor: pointer;
+    }
+    .innovation-tab:hover { background-color: #e2e8f0; color: #0f172a; }
+    html.dark .innovation-tab { border-color: #334155; background-color: #1e293b; color: #cbd5e1; }
+    html.dark .innovation-tab:hover { background-color: #334155; color: #ffffff; }
+    .innovation-tab.active {
+        background-color: var(--color-innovation);
+        border-color: var(--color-innovation-hover);
+        color: #ffffff;
+        box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.25);
+    }
+
+    /* --- Karten (innerhalb der Panes) --- */
+    .innovation-card {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-card); /* Warmes Beige statt kaltem Grau */
+        background: var(--bg-card);           /* Sanfter, warmer Verlauf */
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .innovation-card:hover { border-color: var(--color-innovation-border); }
+    html.dark .innovation-card { border-color: #1e293b; background: rgba(15, 23, 42, 0.8); }
+
+    /* --- Banner --- */
+    .innovation-banner {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid #e9d5ff;
+        background: linear-gradient(to right, rgba(233, 213, 255, 0.4), var(--bg-primary), var(--bg-primary));
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    html.dark .innovation-banner {
+        border-color: var(--color-innovation-border);
+        background: linear-gradient(to right, rgba(88, 28, 135, 0.3), #0f172a, #0f172a);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* --- Mobile Akkordeon --- */
+    .innovation-accordion {
+        border-radius: 1rem;
+        border: 1px solid #e2e8f0;
+        background-color: #ffffff;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    html.dark .innovation-accordion { border-color: #1e293b; background-color: rgba(15, 23, 42, 0.9); }
+
+    /* --- Pane-Header --- */
+    .innovation-pane-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--color-innovation-border);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+    @media (min-width: 768px) {
+        .innovation-pane-header { flex-direction: row; align-items: flex-end; }
+    }
+    .innovation-pane-header-left { display: flex; flex-direction: column; gap: 0.5rem; }
+    .innovation-pane-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.25rem;
+        font-family: var(--font-mono), monospace;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background-color: var(--color-innovation-bg);
+        border: 1px solid var(--color-innovation-border);
+        color: var(--color-innovation);
+        align-self: flex-start;
+    }
+    .innovation-pane-title { font-size: 1.5rem; font-style: italic; font-weight: 400; margin: 0; }
+    @media (min-width: 640px) { .innovation-pane-title { font-size: 1.875rem; } }
+    .innovation-pane-desc { color: #475569; font-size: 0.75rem; max-width: 28rem; }
+    html.dark .innovation-pane-desc { color: #94a3b8; }
+
+    /* ==========================================================================
+       SYSTEM – Smoke-Canvas & Pointer-Events
+       Canvas liegt hinter allem, Sektionen sind durchlässig, interaktive
+       Elemente werden explizit für Klicks freigeschaltet.
+       ========================================================================== */
+
+    canvas#smoke-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        background: transparent !important;
+        will-change: transform;
+        transform: translateZ(0);
+        pointer-events: none; /* Standardmäßig AUS! */
+    }
+    /* Nur wenn der Effekt aktiv ist, fangen wir Events */
+    canvas#smoke-canvas.active {
+        pointer-events: auto;
+    }
+
+    section, footer {
+        position: relative;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    a, button, input, textarea, select,
+    summary, /* Für das Akkordeon */
+    #skill-filters, /* Für die scrollbaren Filter */
+    #blog-filters,
+    #filter-container,
+    .card,
+    .card-surface,
+    .card-surface-muted,
+    .card-badge,
+    .glow-effect,
+    pre,
+    code,
+    [role="button"],
+    #skill-grid > div,
+    #projects-container > div {
+        pointer-events: auto;
+    }
+
+    main section {
+        background-color: transparent !important;
+        border: none !important;
+    }
+/*}*/

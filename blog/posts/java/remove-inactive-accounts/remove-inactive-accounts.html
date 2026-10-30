@@ -1,0 +1,358 @@
+<article class="article-body w-full">
+
+    <!-- Einleitung / Hero Text -->
+    <section class="text-base sm:text-lg leading-relaxed mb-10 space-y-4">
+        <p>
+            In leistungsstarken Backend-Diensten müssen regelmäßig Datenbestände im Arbeitsspeicher bereinigt werden – etwa beim Entfernen deaktivierter Benutzerkonten aus einer Batch-Verarbeitungsliste.
+            Ziel dieser Aufgabe ist es, alle inaktiven Konten (<code>AccountStatus.DISABLED</code>) aus einer bestehenden Liste zu filtern, ohne unnötig neuen Speicher auf dem Heap zu allozieren.
+        </p>
+    </section>
+
+    <!-- Hauptteil des Artikels -->
+    <div class="space-y-10 leading-relaxed text-base">
+
+        <!-- Problem Description -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold tracking-tight pt-4">Problemstellung</h2>
+            <p>
+                Typische Standardlösungen erzeugen beim Filtern eine zweite Liste für die verbleibenden Elemente. Bei Millionen von Datensätzen erzeugt dies jedoch spürbaren Speicher-Overhead und erfordert zusätzliche Arbeit für den Garbage Collector.
+            </p>
+            <p class="inline-flex items-center gap-1.5 flex-wrap">
+                <span>
+                    Wie lässt sich die Bereinigung als <em>In-Place-Operation</em>
+                    <sup>
+                        <button type="button"
+                                onclick="openInfoModal('inplace-explainer')"
+                                class="info-tooltip-btn"
+                                title="Was bedeutet 'In-Place' in der Softwareentwicklung?">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            <span class="sr-only">Erklärung zu In-Place anzeigen</span>
+                        </button>
+                    </sup>umsetzen, um den Zusatzspeicher von O(N) auf O(1) zu reduzieren? Welcher Performance-Gewinn ergibt sich daraus im direkten Benchmark?
+                </span>
+            </p>
+        </section>
+
+        <!-- Existing Approach -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold tracking-tight pt-4">Bisheriger Ansatz (Stream API)</h2>
+            <p>
+                Der klassische Weg in modernem Java nutzt die Stream API, filtert alle aktiven Einträge heraus und sammelt diese in einer neu instanziierten Liste:
+            </p>
+
+            <!-- Code Block 1: Gesamte Applikation -->
+            <div class="code-block my-6">
+<pre><code><span class="text-[#cc7832] font-bold">public static void</span> <span class="text-[#ffc66d]">main</span>(<span class="text-[#a9b7c6]">String</span>[] <span class="text-[#a9b7c6]">args</span>) {
+    <span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#a9b7c6]">accounts</span> = <span class="text-[#cc7832] font-bold">new</span> <span class="text-[#a9b7c6]">ArrayList</span>&lt;&gt;();
+    <span class="text-[#a9b7c6]">Random</span> <span class="text-[#a9b7c6]">random</span> = <span class="text-[#cc7832] font-bold">new</span> <span class="text-[#a9b7c6]">Random</span>();
+    <span class="text-[#a9b7c6]">IntStream</span>.<span class="text-[#ffc66d]">rangeClosed</span>(<span class="text-[#6897bb]">1</span>, <span class="text-[#6897bb]">10_000_000</span>).<span class="text-[#ffc66d]">forEach</span>(<span class="text-[#a9b7c6]">i</span> -&gt; {
+        <span class="text-[#a9b7c6]">AccountStatus</span> <span class="text-[#a9b7c6]">status</span> = <span class="text-[#a9b7c6]">random</span>.<span class="text-[#ffc66d]">nextBoolean</span>() ? <span class="text-[#a9b7c6]">AccountStatus</span>.<span class="text-[#9876aa]">DISABLED</span> : <span class="text-[#a9b7c6]">AccountStatus</span>.<span class="text-[#9876aa]">ACTIVE</span>;
+        <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">add</span>(<span class="text-[#cc7832] font-bold">new</span> <span class="text-[#a9b7c6]">UserAccount</span>(<span class="text-[#a9b7c6]">status</span>));
+    });
+
+    <span class="text-[#a9b7c6]">System</span>.<span class="text-[#a9b7c6]">out</span>.<span class="text-[#ffc66d]">println</span>(<span class="text-[#6a8759]">"Klassischer Stream-Ansatz:"</span>);
+    <span class="text-[#ffc66d]">measurePerformance</span>(<span class="text-[#6a8759]">"Stream-Filter"</span>, () -&gt; <span class="text-[#ffc66d]">cleanupDisabledAccounts</span>(<span class="text-[#a9b7c6]">accounts</span>));
+}
+
+<span class="text-[#cc7832] font-bold">private static</span> <span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#ffc66d]">cleanupDisabledAccounts</span>(<span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#a9b7c6]">accounts</span>) {
+    <span class="text-[#cc7832] font-bold">return</span> <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">stream</span>().<span class="text-[#ffc66d]">filter</span>(
+            <span class="text-[#a9b7c6]">acc</span> -&gt; <span class="text-[#a9b7c6]">acc</span>.<span class="text-[#a9b7c6]">status</span> == <span class="text-[#a9b7c6]">AccountStatus</span>.<span class="text-[#9876aa]">ACTIVE</span>
+    ).<span class="text-[#ffc66d]">toList</span>();
+}
+
+<span class="text-[#808080]">// In-Place-Optimierung implementieren</span>
+<span class="text-[#cc7832] font-bold">private static</span> <span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#ffc66d]">cleanupDisabledAccountsInPlace</span>(<span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#a9b7c6]">accounts</span>) {
+}
+
+<span class="text-[#cc7832] font-bold">public static class</span> <span class="text-[#a9b7c6]">UserAccount</span> {
+    <span class="text-[#a9b7c6]">AccountStatus</span> <span class="text-[#a9b7c6]">status</span>;
+    <span class="text-[#cc7832] font-bold">public</span> <span class="text-[#ffc66d]">UserAccount</span>(<span class="text-[#a9b7c6]">AccountStatus</span> <span class="text-[#a9b7c6]">status</span>) { <span class="text-[#cc7832] font-bold">this</span>.<span class="text-[#a9b7c6]">status</span> = <span class="text-[#a9b7c6]">status</span>; }
+    <span class="text-[#cc7832] font-bold">public boolean</span> <span class="text-[#ffc66d]">isActive</span>() { <span class="text-[#cc7832] font-bold">return</span> <span class="text-[#a9b7c6]">status</span> == <span class="text-[#a9b7c6]">AccountStatus</span>.<span class="text-[#9876aa]">ACTIVE</span>; }
+}
+
+<span class="text-[#cc7832] font-bold">enum</span> <span class="text-[#a9b7c6]">AccountStatus</span> {
+    <span class="text-[#9876aa]">ACTIVE</span>,
+    <span class="text-[#9876aa]">DISABLED</span>
+}</code></pre>
+            </div>
+
+            <p>
+                Der Knackpunkt liegt in der Methode <em><code>cleanupDisabledAccounts()</code></em>:
+            </p>
+
+            <!-- Code Block 1b: Isolierte Methode -->
+            <div class="code-block my-6">
+<pre><code><span class="text-[#cc7832] font-bold">private static</span> <span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#ffc66d]">cleanupDisabledAccounts</span>(<span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#a9b7c6]">accounts</span>) {
+    <span class="text-[#cc7832] font-bold">return</span> <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">stream</span>().<span class="text-[#ffc66d]">filter</span>(
+            <span class="text-[#a9b7c6]">acc</span> -&gt; <span class="text-[#a9b7c6]">acc</span>.<span class="text-[#a9b7c6]">status</span> == <span class="text-[#a9b7c6]">AccountStatus</span>.<span class="text-[#9876aa]">ACTIVE</span>
+    ).<span class="text-[#ffc66d]">toList</span>();
+}</code></pre>
+            </div>
+
+            <p>
+                Bei Aufruf von <code>.toList()</code> wird eine völlig neue Liste auf dem Heap erzeugt. Der Speicheraufwand wächst dadurch proportional zur Elementanzahl (O(N)). Ein <em>In-Place-</em>Algorithmus schaltet diesen Speicher-Overhead aus, indem er die Daten direkt im bestehenden Array neu anordnet (O(1)).
+            </p>
+
+            <p>
+                <strong>Zeitkomplexität:</strong> O(N), da jedes Element der Liste genau einmal überprüft werden muss.
+            </p>
+            <p>
+                <strong>Speicherkomplexität:</strong> O(N), da für die gefilterten Objekte ein neues Listenkonstrukt angelegt wird.
+            </p>
+        </section>
+
+        <!-- Exkurs: Komplexität verständlich erklärt -->
+        <aside class="article-excursion my-8 rounded-xl border p-6 space-y-4 shadow-lg">
+            <div class="flex items-center space-x-2 text-sky-500 dark:text-sky-400 font-semibold text-lg">
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Hintergrund: Speicherkomplexität O(N) vs. O(1)</span>
+            </div>
+            <p class="text-sm leading-relaxed">
+                Die Landau-Notation (O-Notation) beschreibt, wie stark der Ressourcenbedarf skaliert, wenn die Eingabemenge N ansteigt:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+                <li>
+                    <strong>O(N) – Linearer Speicheraufwand:</strong> Für jeden Datensatz benötigst du anteilig zusätzlichen Speicherplatz.
+                    <br/><em>Beispiel:</em> Verdoppelt sich die Datenmenge von 50 auf 100 Millionen Konten, verdoppelt sich auch der benötigte Arbeitsspeicher für die Ergebnisliste.
+                </li>
+                <li>
+                    <strong>O(1) – Konstanter Speicheraufwand:</strong> Der verbrauchte Zusatzspeicher bleibt konstant niedrig – unabhängig davon, ob die Liste 10 oder 100 Millionen Elemente enthält.
+                    <br/><em>Beispiel:</em> Es werden lediglich zwei primitive Index-Variablen (Zeiger) im Stack vorgehalten, um Elemente innerhalb der Original-Liste zu verschieben.
+                </li>
+            </ul>
+            <div class="pt-2 text-xs border-t border-sky-200 dark:border-sky-900/40">
+                Eine Vertiefung zur Komplexitätsanalyse bietet der Artikel
+                <a href="https://www.happycoders.eu/de/algorithmen/o-notation-zeitkomplexitaet/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 underline underline-offset-4 transition-colors">
+                    O-Notation (Big O) und Komplexitätsklassen
+                </a>.
+            </div>
+        </aside>
+
+        <!-- Solution -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold tracking-tight pt-4">Die <em>In-Place-</em>Lösung (Zwei-Zeiger-Muster)</h2>
+            <p>
+                Statt Elemente mit <code>list.remove()</code> einzeln zu löschen (was bei einer <code>ArrayList</code> wegen des ständigen Nachrückens der Folgeelemente zu teurem O(N&sup2;)-Laufzeitverhalten führt), nutzen wir das <strong>Lese-Schreib-Zeiger-Muster (Two-Pointer Pattern)</strong>.
+            </p>
+
+            <div class="article-howto my-6 space-y-3 rounded-r-lg border-l-4 border-sky-500 p-4 text-sm">
+                <p class="font-semibold">Funktionsweise des Algorithmus:</p>
+                <p>
+                    Wir durchlaufen die Liste in einem einzigen Durchgang und überschreiben inaktive Einträge direkt durch nachfolgende aktive Elemente:
+                </p>
+            </div>
+
+            <ul class="list-disc pl-6 space-y-2">
+                <li>
+                    <strong>Schreibzeiger (<code>writeIndex</code>):</strong> Startet bei Index 0 und markiert die nächste Zielposition für ein gültiges (aktives) Konto.
+                </li>
+                <li>
+                    <strong>Lesezeiger (<code>readIndex</code>):</strong> Durchwandert die Liste fortlaufend von Anfang bis Ende und prüft den Status jedes Eintrags.
+                </li>
+            </ul>
+
+            <p>
+                Sobald <code>readIndex</code> auf ein aktives Konto stößt, wird dieses an die Position von <code>writeIndex</code> kopiert und <code>writeIndex</code> um 1 erhöht. Inaktive Konten werden vom Lesezeiger schlicht übergangen.
+            </p>
+            <p class="inline-flex items-center gap-1.5 flex-wrap">
+                <span>
+                    Abschließend erzeugt <code class="text-sky-600 dark:text-sky-400 font-mono">accounts.subList(0, writeIndex);</code> eine View
+                    <sup>
+                        <button type="button"
+                            onclick="openInfoModal('inplace-explainer')"
+                            class="info-tooltip-btn"
+                            title="Was bedeutet 'In-Place' in der Softwareentwicklung?">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="sr-only">Erklärung zu In-Place anzeigen</span>
+                        </button>
+                    </sup>auf den aktiven Teilbereich – ohne Erzeugung einer neuen Liste im Speicher.
+                </span>
+            </p>
+
+            <!-- Code Block 2: In-Place Implementation -->
+            <div class="code-block my-6">
+<pre><code><span class="text-[#cc7832] font-bold">public static</span> <span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#ffc66d]">cleanupDisabledAccountsInPlace</span>(<span class="text-[#a9b7c6]">List</span>&lt;<span class="text-[#a9b7c6]">UserAccount</span>&gt; <span class="text-[#a9b7c6]">accounts</span>) {
+    <span class="text-[#cc7832] font-bold">int</span> <span class="text-[#a9b7c6]">writeIndex</span> = <span class="text-[#6897bb]">0</span>;
+    <span class="text-[#cc7832] font-bold">for</span> (<span class="text-[#cc7832] font-bold">int</span> <span class="text-[#a9b7c6]">readIndex</span> = <span class="text-[#6897bb]">0</span>; <span class="text-[#a9b7c6]">readIndex</span> &lt; <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">size</span>(); <span class="text-[#a9b7c6]">readIndex</span>++) {
+        <span class="text-[#a9b7c6]">UserAccount</span> <span class="text-[#a9b7c6]">account</span> = <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">get</span>(<span class="text-[#a9b7c6]">readIndex</span>);
+        <span class="text-[#cc7832] font-bold">if</span> (<span class="text-[#a9b7c6]">account</span>.<span class="text-[#ffc66d]">isActive</span>()) {
+            <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">set</span>(<span class="text-[#a9b7c6]">writeIndex</span>, <span class="text-[#a9b7c6]">account</span>);
+            <span class="text-[#a9b7c6]">writeIndex</span>++;
+        }
+    }
+    <span class="text-[#cc7832] font-bold">return</span> <span class="text-[#a9b7c6]">accounts</span>.<span class="text-[#ffc66d]">subList</span>(<span class="text-[#6897bb]">0</span>, <span class="text-[#a9b7c6]">writeIndex</span>);
+}</code></pre>
+            </div>
+
+            <p>
+                <strong>Zeitkomplexität:</strong> O(N) – Ein einziger linearer Durchlauf durch das Array.
+            </p>
+            <p>
+                <strong>Speicherkomplexität:</strong> O(1) – Der Speicherbedarf beschränkt sich auf den Zähler <code>writeIndex</code>.
+            </p>
+        </section>
+
+        <!-- Benchmarking -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold tracking-tight pt-4">Performance- & Speichermessung</h2>
+            <p>
+                Mit der in der Applikation integrierten Messmethode ergeben sich bei <strong>10 Millionen Test-Datensätzen</strong> folgende Ergebnisse im direkten Vergleich:
+            </p>
+
+            <!-- Code Block 3: Benchmark Code -->
+            <div class="code-block my-6">
+<pre><code><span class="text-[#cc7832] font-bold">public static void</span> <span class="text-[#ffc66d]">measurePerformance</span>(<span class="text-[#a9b7c6]">String</span> <span class="text-[#a9b7c6]">label</span>, <span class="text-[#a9b7c6]">Runnable</span> <span class="text-[#a9b7c6]">task</span>) {
+    <span class="text-[#a9b7c6]">System</span>.<span class="text-[#ffc66d]">gc</span>();
+    <span class="text-[#a9b7c6]">Runtime</span> <span class="text-[#a9b7c6]">runtime</span> = <span class="text-[#a9b7c6]">Runtime</span>.<span class="text-[#ffc66d]">getRuntime</span>();
+    <span class="text-[#cc7832] font-bold">long</span> <span class="text-[#a9b7c6]">memBefore</span> = <span class="text-[#a9b7c6]">runtime</span>.<span class="text-[#ffc66d]">totalMemory</span>() - <span class="text-[#a9b7c6]">runtime</span>.<span class="text-[#ffc66d]">freeMemory</span>();
+    <span class="text-[#cc7832] font-bold">long</span> <span class="text-[#a9b7c6]">start</span> = <span class="text-[#a9b7c6]">System</span>.<span class="text-[#ffc66d]">currentTimeMillis</span>();
+
+    <span class="text-[#a9b7c6]">task</span>.<span class="text-[#ffc66d]">run</span>();
+
+    <span class="text-[#cc7832] font-bold">long</span> <span class="text-[#a9b7c6]">duration</span> = <span class="text-[#a9b7c6]">System</span>.<span class="text-[#ffc66d]">currentTimeMillis</span>() - <span class="text-[#a9b7c6]">start</span>;
+    <span class="text-[#cc7832] font-bold">long</span> <span class="text-[#a9b7c6]">memAfter</span> = <span class="text-[#a9b7c6]">runtime</span>.<span class="text-[#ffc66d]">totalMemory</span>() - <span class="text-[#a9b7c6]">runtime</span>.<span class="text-[#ffc66d]">freeMemory</span>();
+
+    <span class="text-[#a9b7c6]">System</span>.<span class="text-[#a9b7c6]">out</span>.<span class="text-[#ffc66d]">println</span>(<span class="text-[#a9b7c6]">label</span> + <span class="text-[#6a8759]">":"</span>);
+    <span class="text-[#a9b7c6]">System</span>.<span class="text-[#a9b7c6]">out</span>.<span class="text-[#ffc66d]">println</span>(<span class="text-[#6a8759]">"  Laufzeit: "</span> + <span class="text-[#a9b7c6]">duration</span> + <span class="text-[#6a8759]">" ms"</span>);
+    <span class="text-[#a9b7c6]">System</span>.<span class="text-[#a9b7c6]">out</span>.<span class="text-[#ffc66d]">println</span>(<span class="text-[#6a8759]">"  Zusatzspeicher: "</span> + <span class="text-[#a9b7c6]">String</span>.<span class="text-[#ffc66d]">format</span>(<span class="text-[#6a8759]">"%.1f"</span>, (<span class="text-[#a9b7c6]">memAfter</span> - <span class="text-[#a9b7c6]">memBefore</span>) / (<span class="text-[#6897bb]">1024.0</span> * <span class="text-[#6897bb]">1024.0</span>)) + <span class="text-[#6a8759]">" MB"</span>);
+}</code></pre>
+            </div>
+
+            <!-- Messergebnisse Container -->
+            <div class="article-benchmark my-6 rounded-xl border p-6 shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <h3 class="text-lg font-bold">Messergebnisse (10 Mio. Datensätze)</h3>
+                    <span class="text-xs font-mono text-slate-600 dark:text-slate-400 bg-slate-200 dark:bg-slate-800 px-2.5 py-1 rounded border border-slate-300 dark:border-slate-700">OpenJDK 25.0.2</span>
+                </div>
+
+                <p class="mb-6 text-sm text-slate-600 dark:text-slate-400">
+                    Direkter Vergleich der Ausführungszeit und des Speicheraufwands bei <strong>10.000.000 Test-Datensätzen</strong> im Arbeitsspeicher:
+                </p>
+
+                <!-- KPI Cards -->
+                <div class="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                    <!-- In-Place -->
+                    <div class="rounded-lg border border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/20 p-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold text-emerald-700 dark:text-emerald-400">In-Place Optimierung</span>
+                            <span class="rounded bg-emerald-200 dark:bg-emerald-500/20 px-2 py-0.5 text-xs font-bold text-emerald-800 dark:text-emerald-300">~14,6% schneller</span>
+                        </div>
+                        <div class="mt-2 text-3xl font-extrabold">70 <span class="text-lg font-normal text-slate-500 dark:text-slate-400">ms</span></div>
+                        <div class="mt-3 pt-3 border-t border-emerald-200 dark:border-emerald-500/20 flex items-center justify-between text-xs">
+                            <span>Zusatzspeicher:</span>
+                            <span class="font-mono font-bold text-emerald-700 dark:text-emerald-400">0,0 MB</span>
+                        </div>
+                        <p class="mt-1 text-[11px] text-slate-500 dark:text-slate-400">Lese-/Schreib-Zeiger • O(1) Zusatzspeicher</p>
+                    </div>
+
+                    <!-- Stream -->
+                    <div class="rounded-lg border border-slate-300 dark:border-slate-800 bg-slate-100 dark:bg-slate-800/40 p-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Stream-Filter (.toList())</span>
+                            <span class="rounded bg-slate-200 dark:bg-slate-700/50 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-400">Baseline</span>
+                        </div>
+                        <div class="mt-2 text-3xl font-extrabold">82 <span class="text-lg font-normal text-slate-500 dark:text-slate-400">ms</span></div>
+                        <div class="mt-3 pt-3 border-t border-slate-300 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span>Zusatzspeicher:</span>
+                            <span class="font-mono text-amber-600 dark:text-amber-400">74,0 MB</span>
+                        </div>
+                        <p class="mt-1 text-[11px] text-slate-500 dark:text-slate-400">Erzeugt neue Liste • O(N) Speicherbedarf</p>
+                    </div>
+
+                </div>
+
+                <!-- Ausklappbarer Konsolen-Log -->
+                <details class="group rounded-lg border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-950">
+                    <summary class="flex cursor-pointer items-center justify-between p-4 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                        <span>Original Konsolen-Ausgabe (Run: InPlaceOptimizationDemo) anzeigen</span>
+                        <span class="text-xs text-slate-500 group-open:hidden">▼</span>
+                        <span class="hidden text-xs text-slate-500 group-open:inline">▲</span>
+                    </summary>
+                    <div class="border-t border-slate-300 dark:border-slate-800 p-4 font-mono text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed overflow-x-auto">
+<pre class="text-slate-700 dark:text-slate-300"><code><span class="text-slate-500">Generiere 10_000_000 Test-Datensätze...</span>
+
+<span class="text-sky-600 dark:text-sky-400 font-semibold">Klassischer Stream-Filter-Ansatz:</span>
+  Laufzeit: <span class="text-amber-600 dark:text-amber-300">82 ms</span>
+  Zusatzspeicher: <span class="text-amber-700 dark:text-amber-400 font-semibold">74,0 MB</span>
+
+<span class="text-emerald-600 dark:text-emerald-400 font-semibold">In-Place-Optimierung:</span>
+  Laufzeit: <span class="text-emerald-700 dark:text-emerald-300">70 ms</span>
+  Zusatzspeicher: <span class="text-emerald-700 dark:text-emerald-400 font-semibold">0,0 MB</span>
+
+<span class="text-sky-600 dark:text-sky-300 font-semibold">Verifikation: Stream = 4998609 Konten, In-Place = 4998609 Konten</span>
+
+<span class="text-slate-500">Process finished with exit code 0</span></code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </div>
+
+</article>
+
+
+<!-- Inhalt für Info-Dialog zu "In-Place" -->
+<!-- ------------------------------------ -->
+<template id="inplace-explainer" data-title="Was bedeutet „In-Place“ in der Softwareentwicklung?">
+    <p>
+        Ein <strong>In-Place-Algorithmus</strong> verarbeitet Datenstrukturen direkt an ihrer ursprünglichen Adresse im Arbeitsspeicher, anstatt ein neues Zielobjekt anzulegen.
+    </p>
+
+    <div class="space-y-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 my-3">
+        <h4 class="font-semibold text-white text-base">Vorteile auf einen Blick:</h4>
+        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+            <li>
+                <strong class="text-white">Minimaler Zusatzspeicher O(1):</strong> Der Speicherbedarf bleibt konstant, da nur primitive Zähler-Variablen benötigt werden.
+            </li>
+            <li>
+                <strong class="text-white">Entlastung des Garbage Collectors:</strong> Da keine Millionen von neuen Objekten erzeugt werden, entstehen keine GC-Pausen.
+            </li>
+        </ul>
+    </div>
+</template>
+
+
+<!-- Inhalt für Info-Dialog zu "View" -->
+<!-- -------------------------------- -->
+<template id="view-explainer" data-title="Was bedeutet „View“ (Sicht) in Java faktisch?">
+    <p>
+        Eine <strong>View</strong> ist in Java kein eigenständiger Datenbehälter, sondern ein <strong>Fenster auf bereits existierende Daten</strong> im Arbeitsspeicher.
+    </p>
+
+    <div class="space-y-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 my-3">
+        <h4 class="font-semibold text-white text-base">Eigenschaften von <code>subList()</code> im Code:</h4>
+        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+            <li>
+                <strong class="text-white">Keine Umkopierung (O(1)):</strong> Es wird kein neues Array alloziert und kein Element im Speicher kopiert.
+            </li>
+            <li>
+                <strong class="text-white">Leichtgewichtiges Wrapper-Objekt:</strong> Java erzeugt lediglich eine schlanke Referenz mit Start- (<code class="text-sky-400">0</code>) und Endindex (<code class="text-sky-400">writeIndex</code>).
+            </li>
+            <li>
+                <strong class="text-white">Direktes Durchreichen:</strong> Lese- und Schreibzugriffe auf die SubList werden transparent an das zugrundeliegende Original-Array weitergeleitet.
+            </li>
+        </ul>
+    </div>
+
+    <div class="space-y-2 bg-sky-950/20 p-4 rounded-xl border border-sky-900/40 my-3">
+        <h4 class="font-semibold text-sky-400">Vergleichs-Analogie</h4>
+        <ul class="space-y-2 text-slate-300">
+            <li><strong class="text-white">Kopie (z. B. <code>.toList()</code>):</strong> Du druckst eine Auswahl von Seiten aus einem Ordner neu aus. Das verbraucht frisches Papier und Zeit.</li>
+            <li><strong class="text-white">View (<code>subList()</code>):</strong> Du schiebst lediglich ein Lesezeichen in den Ordner. Der Inhalt bleibt unverändert, du betrachtest nur den Bereich vor der Markierung.</li>
+        </ul>
+    </div>
+
+    <div class="p-3 bg-amber-950/20 border border-amber-900/40 rounded-lg text-amber-200/90 text-xs my-2">
+        <strong class="text-amber-400">Hinweis zur Praxis:</strong> Elemente oberhalb von <code class="text-amber-300">writeIndex</code> bleiben im zugrundeliegenden Array bestehen. Möchtest du diese physisch freigeben, rufst du <code class="text-amber-300">accounts.subList(writeIndex, accounts.size()).clear()</code> auf.
+    </div>
+</template>

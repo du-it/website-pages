@@ -1,0 +1,11 @@
+{
+  "siteDescription": "Freiberuflicher Senior Softwareentwickler für Java, Spring Boot, Microservices, Hexagonale Architektur & Cloud.",
+  "developerName": "Dirk Ulrich",
+  "company": "du-it",
+  "email": "d.ulrich@du-it.de",
+  "roleDescription": "Senior Java Backend & Cloud Softwareentwickler",
+  "brandSlogan": "Smart Java Development",
+  "availabilityStatus": "FULL",
+  "_comment_availabilityStatus": "Erlaubte Werte: FULL, PARTIAL, NONE",
+  "enableSmokeEffect": false
+}

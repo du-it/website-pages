@@ -1,0 +1,339 @@
+/* ==========================================================================
+   COMPONENTS.CSS – Wiederverwendbare Komponenten
+   Wird in den Layer "components" geladen.
+   ========================================================================== */
+
+@layer components {
+    /* --- Überschriften --- */
+    .section-eyebrow {
+        font-family: var(--font-mono), monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.75rem;
+        color: #7c3aed;
+        margin-bottom: 0.5rem;
+    }
+    html.dark .section-eyebrow { color: #c084fc; }
+
+    /* --- Buttons --- */
+    .btn-copy {
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        background-color: #f1f5f9;
+        color: #334155;
+        border: 1px solid #e2e8f0;
+        transition: background-color 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+    }
+    .btn-copy:hover { background-color: #e2e8f0; }
+    html.dark .btn-copy { background-color: #020617; color: #cbd5e1; border-color: #1e293b; }
+    html.dark .btn-copy:hover { background-color: #1e293b; }
+
+    .btn-filter {
+        @apply px-4 py-2 rounded-xl text-xs font-mono transition-all border flex items-center gap-2 cursor-pointer shrink-0;
+        @apply bg-slate-900/80 text-slate-300 border-slate-800 hover:border-slate-700 hover:text-white;
+    }
+
+    .btn-filter.active {
+        @apply bg-brand-500 text-white border-brand-600 font-bold;
+    }
+
+    .btn-filter {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-family: var(--font-mono), monospace;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border: 1px solid #1e293b;
+        background-color: rgba(15, 23, 42, 0.8);
+        color: #cbd5e1;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    .btn-filter:hover { border-color: #334155; color: #ffffff; }
+    .btn-filter.active { background-color: #0052a3; color: #ffffff; border-color: #0066cc; }
+
+    /* Copy-Button für Code-Blöcke */
+    .code-block {
+        position: relative;
+    }
+
+    .code-btn-copy {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.375rem;
+        font-size: 0.875rem;
+        background-color: rgba(15, 23, 42, 0.8);
+        color: #cbd5e1;
+        border: 1px solid #334155;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s ease, background-color 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .code-btn-copy:hover {
+        opacity: 1;
+        background-color: rgba(51, 65, 85, 0.9);
+    }
+
+    .code-btn-copy.copied {
+        background-color: #059669;
+        color: #ffffff;
+        opacity: 1;
+    }
+
+    /* --- Button für Filter-Navigation --- */
+    .btn-filter-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(244, 237, 228, 0.9);
+        border: 1px solid var(--border-card);
+        color: var(--text-primary);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    html.dark .btn-filter-nav {
+        background-color: rgba(15, 23, 42, 0.9);
+        border-color: #334155;
+        color: #cbd5e1;
+    }
+
+    .btn-filter-nav:hover {
+        background-color: #ffffff;
+        color: var(--color-brand-500);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    html.dark .btn-filter-nav:hover {
+        background-color: #1e293b;
+        color: #38bdf8;
+    }
+
+    /* Modifier für links und rechts */
+    .btn-filter-nav-left { left: 0; }
+    .btn-filter-nav-right { right: 0; }
+
+    /* Scrollbar verstecken für die Filter-Leisten */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    /* --- Karten --- */
+    .card-surface {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-card);
+        box-shadow: var(--shadow-card);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .card-surface-muted { color: #475569; }
+    html.dark .card-surface-muted { color: #cbd5e1; }
+
+    .card-solid {
+        background-color: #ffffff;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+    html.dark .card-solid { background-color: #0f172a; }
+
+    .card-badge {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-family: var(--font-mono), monospace;
+        font-size: 0.5625rem;
+        padding: 0.125rem 0.375rem;
+        border-radius: 0.25rem;
+        background-color: #f3e8ff;
+        color: #6b21a8;
+        border: 1px solid #e9d5ff;
+    }
+    html.dark .card-badge { background-color: #1e293b; color: #38bdf8; border-color: rgba(56, 189, 248, 0.2); }
+
+    .card-project { transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+
+    /* --- Inline-Textlinks --- */
+    .text-link {
+        color: var(--color-brand-600);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
+    }
+
+    .text-link:hover {
+        color: var(--color-brand-500);
+        text-decoration-thickness: 2px;
+    }
+
+    /* Dark Mode */
+    html.dark .text-link {
+        color: var(--color-brand-400);
+    }
+
+    html.dark .text-link:hover {
+        color: var(--color-brand-300);
+    }
+
+    /* --- Hover-Text --- */
+    .hover-text h2, .hover-text h4 { transition: color 0.3s ease; }
+    .hover-text:hover h2, .hover-text:hover h4 { color: var(--hover-text-color, #38bdf8); }
+    .hover-text-cyan:hover h2, .hover-text-cyan:hover h4 { --hover-text-color: #38bdf8; }
+    .hover-text-purple:hover h2, .hover-text-purple:hover h4 { --hover-text-color: #c084fc; }
+    .hover-text-emerald:hover h2, .hover-text-emerald:hover h4 { --hover-text-color: #34d399; }
+    .hover-text-orange:hover h2, .hover-text-orange:hover h4 { --hover-text-color: #fb923c; }
+
+    /* --- Gradient-Text (Robust für Safari) --- */
+    .text-gradient-brand,
+    .text-gradient-silver,
+    .text-gradient-warm {
+        /* 1. Fallback-Farbe, falls der Gradient nicht unterstützt wird */
+        color: #1e3a8a;
+        display: inline-block;
+
+        /* 2. Verhindert, dass mehrzeiliger Text auf Safari verschwindet */
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+
+    /* 3. Nur wenn der Browser Clipping unterstützt, machen wir den Text transparent */
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        .text-gradient-brand {
+            background: linear-gradient(135deg, var(--gradient-brand-accent), var(--gradient-brand-mid), var(--gradient-brand-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .text-gradient-silver {
+            background: linear-gradient(135deg, var(--gradient-silver-accent), var(--gradient-silver-mid), var(--gradient-silver-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .text-gradient-warm {
+            background: linear-gradient(135deg, var(--gradient-warm-accent), var(--gradient-warm-mid), var(--gradient-warm-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    }
+
+    /* --- Glass (Header) --- */
+    .glass { background: rgba(244, 237, 228, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    html.dark .glass { background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+    /* --- Footer --- */
+    .footer { background-color: #f1f5f9; border-top: 1px solid #e2e8f0; padding: 1.5rem 0; }
+    html.dark .footer { background-color: #020617; border-top-color: #1e293b; }
+    .footer-text { color: #475569; }
+    html.dark .footer-text { color: #94a3b8; }
+    .footer-text-muted { color: #64748b; }
+    html.dark .footer-text-muted { color: #64748b; }
+
+    /* --- Navigation --- */
+    .nav-link { color: #334155; transition: color 0.2s ease; }
+    .nav-link:hover { color: #0052a3; }
+    html.dark .nav-link { color: #cbd5e1; }
+    html.dark .nav-link:hover { color: #38bdf8; }
+
+
+    /* --- Glow-Effekte --- */
+
+    /* Basis: nur setzen, wenn KEIN card-surface (die hat ihren eigenen Schatten/Rahmen) */
+    .glow-effect {
+        border: 1px solid #1e293b;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* = shadow-2xl */
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card-surface.glow-hover {
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Hover: Rahmen + Glow – Grundschatten bleibt erhalten */
+    .glow-effect:hover {
+        border-color: var(--glow-color, rgba(14, 165, 233, 0.55));
+        box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 20px -5px var(--glow-color, rgba(14, 165, 233, 0.55)),
+                0 0 40px -10px var(--glow-color, rgba(14, 165, 233, 0.2));
+    }
+
+    .card-surface.glow-hover:hover {
+        border-color: var(--glow-color, rgba(14, 165, 233, 0.55));
+        box-shadow:
+                var(--shadow-card),
+                0 0 20px -5px var(--glow-color, rgba(14, 165, 233, 0.55)),
+                0 0 40px -10px var(--glow-color, rgba(14, 165, 233, 0.2));
+    }
+
+    /* Farb-Modifier */
+    .glow-blue:hover,
+    .card-surface.glow-hover.glow-blue:hover    { --glow-color: rgba(14, 165, 233, 0.55); }
+    .glow-emerald:hover,
+    .card-surface.glow-hover.glow-emerald:hover { --glow-color: rgba(16, 185, 129, 0.55); }
+    .glow-purple:hover,
+    .card-surface.glow-hover.glow-purple:hover  { --glow-color: rgba(168, 85, 247, 0.55); }
+    .glow-orange:hover,
+    .card-surface.glow-hover.glow-orange:hover  { --glow-color: rgba(249, 115, 22, 0.55); }
+
+    /* Dark Mode: etwas kräftigerer Glow */
+    html.dark .glow-effect:hover {
+        box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 25px -5px var(--glow-color, rgba(14, 165, 233, 0.55)),
+                0 0 50px -10px var(--glow-color, rgba(14, 165, 233, 0.2));
+    }
+    html.dark .card-surface.glow-hover:hover {
+        box-shadow:
+                var(--shadow-card),
+                0 0 25px -5px var(--glow-color, rgba(14, 165, 233, 0.55)),
+                0 0 50px -10px var(--glow-color, rgba(14, 165, 233, 0.2));
+    }
+
+
+    #modal-projects-list {
+        scrollbar-width: thin;
+        scrollbar-color: #334155 #0f172a;
+    }
+    #modal-projects-list::-webkit-scrollbar { width: 8px; }
+    #modal-projects-list::-webkit-scrollbar-track { background: #0f172a !important; }
+    #modal-projects-list::-webkit-scrollbar-thumb { background: #334155 !important; border-radius: 4px; }
+    #modal-projects-list::-webkit-scrollbar-thumb:hover { background: #0ea5e9 !important; }
+}

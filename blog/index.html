@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog & Architecture Notes | Dirk Ulrich - Senior Java Softwareentwickler</title>
+    <meta name="description" content="Praxisnahe Artikel zu Java 21, Spring Boot 3, Enterprise KI Integration (Spring AI) und Blockchain-Architekturen.">
+
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <!-- Lokale Einstellungen und Fonts -->
+
+    <script src="../js/theme-loader.js"></script>
+    <script type="module" src="../js/app.js"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+<!-- Header Navigation -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300"></header>
+
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+
+    <!-- Hero Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-600 dark:text-brand-400 text-xs font-mono mb-6">
+            <i class="fa-solid fa-code"></i> Java Backend & Architecture Insights
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
+            Engineering Notes & Best Practices
+        </h1>
+        <p class="card-surface-muted text-base sm:text-lg leading-relaxed">
+            Praxisnahe Architekturlösungen, Code-Patterns und Erfahrungen aus 25+ Jahren Enterprise Java Entwicklung.
+        </p>
+    </div>
+
+    <!-- Filter Bar (Datengesteuert via BlogController & blog-index.json) -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="filter-buttons"></div>
+
+    <!-- Dynamic Article Grid Container -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid"></div>
+
+</main>
+
+<footer id="main-footer"></footer>
+
+</body>
+</html>

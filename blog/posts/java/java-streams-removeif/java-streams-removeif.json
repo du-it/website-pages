@@ -1,0 +1,17 @@
+{
+  "id": "java-streams-removeif",
+  "title": "Java Streams: Wann removeIf() die bessere Wahl ist",
+  "category": "java",
+  "categoryLabel": "Java Backend Refactoring",
+  "date": "2026-09-25",
+  "updated": "2026-09-25",
+  "readTime": "4 Min.",
+  "excerpt": "Seit Java 8 greifen viele Entwickler reflexartig zu Stream Pipelines. Was bei Transformationen elegant ist, erzeugt beim Entfernen oft unnötigen Overhead.",
+  "author": "Dirk Ulrich",
+  "contentPath": "posts/java/java-streams-removeif/java-streams-removeif.html",
+  "takeaways": [
+    "Java Streams sind nicht immer die performanteste Lösung.",
+    "removeIf() arbeitet in-place und spart Speicherzuweisungen.",
+    "Vermeidet unnötigen GC-Overhead bei großen Kollektionen."
+  ]
+}
