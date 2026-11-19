@@ -1,0 +1,37 @@
+# Dirk Ulrich – Senior Java Backend & Cloud Developer
+
+> Freiberuflicher Diplom-Informatiker (FH) mit über 25 Jahren Erfahrung in der Java-Entwicklung. Spezialisiert auf Enterprise-Backends, hexagonale Architektur, Cloud-Migration und KI-Integration. Standort: Berlin / Remote (weltweit).
+
+## Kernkompetenzen und ExpertiseSection
+
+- **Sprachen:** Java (21/17/11), Kotlin, Python, TypeScript, SQL, HTML/CSS
+- **Frameworks:** Spring Boot (3.x/4), Spring Cloud, Hibernate, JUnit, Mockito, WordPress
+- **Architektur:** Hexagonale Architektur, Microservices, Domain-Driven Design (DDD), TDD, Clean Code
+- **Cloud & DevOps:** AWS, Azure, Docker, Kubernetes, CI/CD, Terraform, Jenkins, GitHub Actions
+- **Datenbanken:** PostgreSQL, Oracle, MS SQL Server, MongoDB, Cassandra, IBM DB2, PostgreSQL, MySql, Elasticsearch
+- **Messaging & Streaming:** Apache Kafka, RabbitMQ, AWS SQS
+- **KI & Emerging Tech:** LLM-Integration, Prompt Engineering, Python, Blockchain & DLT (Solidity), Smart Contracts
+
+## Dienstleistungen
+
+- Entwicklung von skalierbaren Java-Backend-Systemen
+- Architekturberatung und Refactoring von Legacy-Systemen
+- Migration von Monolithen zu Microservices und Cloud-Infrastrukturen
+- Integration von KI-Modellen in bestehende Applikationen
+- Interim-Engineering und Team-Lead-Support
+
+## Verfügbarkeit & Standort
+
+- **Standort:** Berlin, Deutschland (Brandenburg)
+- **Einsatzgebiet:** Remote, Hybrid oder Vor-Ort (Berlin/Umland)
+- **Status:** Verfügbar für freiberufliche Projekte
+
+## Kontakt & Profile
+
+- **Webseite:** https://www.du-it.de
+- **E-Mail:** d.ulrich@du-it.de
+- **LinkedIn:** https://www.linkedin.com/in/du-it-dirk-ulrich/
+- **Xing:** https://www.xing.com/profile/Dirk_Ulrich/web_profiles
+- **GitHub:** https://github.com/du-it
+- **jobtic:** https://jobtic.com/profile/dirk-ulrich
+- **Projekthistorie (PDF):** https://www.du-it.de/assets/Projekthistorie.pdf

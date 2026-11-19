@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de" class="dark"> <!-- Fallback, wird durch Script sofort überschrieben -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum & Datenschutz | du-it</title>
+
+    <link rel="icon" href="/assets/du-it_code-block_favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/all.min.css">
+
+    <!-- Anti-Flash Theme Initialization (Synchron) vor dem Body-Rendering -->
+    <script src="/theme-init.js"></script>
+
+    <!-- Vite Script für die Legal-Seite -->
+  <script type="module" crossorigin src="/assets/legal-CNchQHHj.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/ThemeService-CO6axoEC.js">
+  <link rel="stylesheet" crossorigin href="/assets/ThemeService-BrNHtLdT.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white bg-canvas text-primary font-sans overflow-x-hidden">
+
+<header class="w-full border-b border-subtle bg-surface/50 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/index.html" class="font-bold text-sm hover:text-cyan-500 transition-colors flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left"></i> <span id="back-link">Zurück zur Startseite</span>
+        </a>
+
+        <!-- Container für die Toggle-Buttons (Theme + Sprache). Wird von legal.ts mit ButtonPresets befüllt. -->
+        <div id="legal-header-controls" class="flex items-center gap-3"></div>
+    </div>
+</header>
+
+<main id="legal-content" class="max-w-4xl mx-auto px-6 py-12 flex-grow w-full">
+    <!-- Wird dynamisch via legal.ts befüllt -->
+</main>
+
+<footer class="w-full border-t border-subtle bg-surface/30 py-6 mt-12">
+    <div class="max-w-4xl mx-auto px-6 text-center text-xs text-muted">
+        &copy; <span id="current-year"></span> Dirk Ulrich-Informationstechnologie
+    </div>
+</footer>
+
+</body>
+</html>

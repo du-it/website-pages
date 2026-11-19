@@ -1,0 +1,146 @@
+{
+  "siteUrl": "https://www.du-it.de",
+  "developerName": "Dirk Ulrich",
+  "company": "du-it",
+  "siteDescription": "Freiberuflicher Senior Softwareentwickler für Java, Spring Boot, Microservices, Hexagonale Architektur & Cloud.",
+  "roleDescription": "Senior Java Backend & Cloud Softwareentwickler",
+  "email": "d.ulrich@du-it.de",
+  "phone": "+49-(0)174 948 87 39",
+
+  "branding": {
+    "logoPath": "/assets/logos/du-it-logo-google-square.svg",
+    "companyName": "du-it",
+    "legalName": "Dirk Ulrich-Informationstechnologie",
+    "showClaim": true,
+    "logoPosition": "right",
+    "_animation": "logo | alternating | text | random",
+    "animation": "text",
+    "pulseCount": 2
+  },
+  "brandSlogan": "Smart Java Development",
+
+  "availableLocales": ["de", "en"],
+  "defaultLocale": "de",
+
+  "features": {
+    "enableShortlist": true,
+    "enableSmokeEffect": false,
+    "enableGlobeAnimation": true,
+    "themeTransitionDuration": 5000,
+    "carouselAutoScrollIntervalMs": 900,
+
+    "_comment_expertiseMarquee": "Timings für den Lauftext in den Kernkompetenzen (in Millisekunden und Pixeln)",
+    "expertiseMarquee": {
+      "scrollSpeedPxPerSec": 30,
+      "pauseDurationMs": 2000,
+      "slideDurationMs": 500
+    },
+
+    "_comment_shortlist": "Timings und Physik für die Shortlist-Komponenten (in Millisekunden und relativen Werten).",
+    "shortlist": {
+      "fab": {
+        "iconStyle": "fa-regular",
+        "animationDelayMs": 2500,
+        "vibrateDurationMs": 1200,
+        "vibrateIntensityPx": 2,
+        "vibrateIntensityDeg": 5,
+        "flyDelayMs": 200,
+        "flightDurationMs": 3200,
+        "counterBadges": {
+          "orbitDurationMs": 3000,
+          "landingDurationMs": 3000,
+          "projectBadgeColor": "#CCFFCC",
+          "noteBadgeColor": "#FFF1C9"
+        }
+      }
+    }
+  },
+
+  "_sections": "Hier kannst du die Sichtbarkeit der einzelnen Sektionen auf der Website steuern. true = sichtbar, false = unsichtbar",
+  "sections": {
+    "about": true,
+    "techStack": true,
+    "expertise": true,
+    "projects": true,
+    "journey": true,
+    "blog": true,
+    "faq": true,
+    "contact": true
+  },
+
+  "availabilityStatus": "FULL",
+  "_comment_availabilityStatus": "Erlaubte Werte: FULL, PARTIAL, NONE",
+  "availability": {
+    "full_remote": 90,
+    "full_onsite": 5,
+    "partial_remote": 90,
+    "partial_onsite": 5,
+    "full_fallback_remote": 95,
+    "full_fallback_onsite": 5,
+    "partial_fallback_remote": 50,
+    "partial_fallback_onsite": 0,
+    "full_onsite_location": "Berlin"
+  },
+
+  "browserWarning": {
+    "_comment": "Konfiguration für die Browser-Kompatibilitäts-Warnung. Zeiten in ms",
+    "autoDismissMs": 5000,
+    "pulseCount": 5,
+    "pulseDurationMs": 500
+  },
+
+  "contactAnimations": {
+    "portrait": "/assets/dirk-ulrich-portrait-2-square.webp",
+    "email": "/assets/animated/sending-email-2x-3s.mp4",
+    "phone": "/assets/animated/business-call.mp4",
+    "location": "/assets/animated/work-worldwide.mp4"
+  },
+
+  "aboutVisualType": "code",
+  "_comment_heroVisual": "Erlaubte Werte: 'code' (zeigt das Code-Fenster) oder 'globe' (zeigt den 3D-Globus in TechGlobe.ts)",
+  "techGlobe": {
+    "_comment_animationTrigger": "Erlaubte Werte: 'hover' (Start bei Mauskontakt, Stopp beim Verlassen) oder 'always' (Dauerrotation)",
+    "animationTrigger": "hover",
+    "rotationSpeed": 0.005
+  },
+
+  "_comment_networkMap": "Einstellungen für die 3D-Netzwerkkarte (NetworkMap.ts)",
+  "networkMap": {
+    "_comment_defaultColorPackage": "Der Name des Farbpakets, das standardmäßig verwendet wird (muss exakt einem Namen in colorPackages entsprechen).",
+    "defaultColorPackage": "amber",
+    "colorPackages": [
+      {
+        "name": "amber",
+        "colors": {
+          "mapPointColor": "#f59e0b",
+          "hubCoreColor": "#fffbeb",
+          "hubAuraColor": "#f59e0b",
+          "lineColor": "#d97706",
+          "dataPacketColor": "#fffbeb"
+        }
+      },
+      {
+        "name": "cyan",
+        "colors": {
+          "mapPointColor": "#38bdf8",
+          "hubCoreColor": "#ffffff",
+          "hubAuraColor": "#22d3ee",
+          "lineColor": "#06b6d4",
+          "dataPacketColor": "#ffffff"
+        }
+      }
+    ],
+    "cameraZ": 21,
+    "mapScale": 18,
+    "positioning": {
+      "_comment_right": "Abstand vom RECHTEN Rand in Pixeln. Um die Map weiter nach RECHTS zu schieben, Wert KLEINER (z.B. von 0 auf -20).",
+      "_comment_bottom": "Abstand vom UNTEREN Rand in Pixeln. Um die Map weiter nach UNTEN zu schieben, Wert KLEINER (z.B. von 0 auf -20).",
+      "_comment_width": "Breite der Map in Prozent der Sektion.",
+      "_comment_height": "Höhe der Map in Pixeln.",
+      "right": 25,
+      "top": 220,
+      "width": 90,
+      "height": 600
+    }
+  }
+}

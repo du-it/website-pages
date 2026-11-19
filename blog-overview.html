@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Übersicht | du-it</title>
+
+    <!-- Anti-Flash Theme Initialization (Synchron) -->
+    <script src="/theme-init.js"></script>
+
+    <link rel="icon" href="/assets/du-it_code-block_favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/all.min.css">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="du-it Blog" href="/rss.xml">
+
+    <!-- Einstiegspunkt für die Blog-Übersicht (Domain-Ordner) -->
+  <script type="module" crossorigin src="/assets/blogOverview-6XyyILys.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/ThemeService-CO6axoEC.js">
+  <link rel="modulepreload" crossorigin href="/assets/ShortlistButton-BQJVnaeP.js">
+  <link rel="modulepreload" crossorigin href="/assets/BaseBlogComponent-0t-uAhVs.js">
+  <link rel="stylesheet" crossorigin href="/assets/ThemeService-BrNHtLdT.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white bg-canvas text-primary font-sans overflow-x-hidden transition-colors duration-400">
+
+<div class="fixed inset-0 z-0 bg-canvas transition-colors duration-500"></div>
+
+<div class="h-screen w-full overflow-hidden relative z-10 flex flex-col">
+
+    <!-- Header mit dynamischem Logo-Slot und i18n Back-Link -->
+    <header class="w-full shrink-0 bg-surface border-b border-subtle py-3 px-6 flex justify-between items-center z-50 shadow-sm">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-6">
+                <a href="/index.html#hero" class="group transition-transform hover:scale-105 shrink-0" aria-label="Startseite du-it">
+                    <div id="logo-slot" class="inline-flex items-center"></div>
+                </a>
+
+                <a href="/index.html#blog" class="inline-flex items-center gap-2 text-muted hover:text-amber-600 dark:hover:text-cyan-400 transition-colors text-sm font-sans font-bold group border-l border-subtle pl-6">
+                    <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+                    <span id="back-to-home-text"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <div id="lang-toggle-slot"></div>
+            <div id="theme-toggle-slot"></div>
+        </div>
+    </header>
+
+    <!-- Hauptbereich -->
+    <main class="site-layout__main-content flex-1 h-full overflow-y-auto overflow-x-hidden scroll-smooth px-4 sm:px-6 py-8">
+        <div class="max-w-5xl mx-auto pb-12">
+
+            <div class="mb-10">
+                <h1 class="text-3xl sm:text-5xl font-serif font-medium text-primary tracking-tight mb-3" id="blog-overview-title"></h1>
+                <p class="text-muted text-sm sm:text-base font-sans" id="blog-overview-subtitle"></p>
+            </div>
+
+            <!-- Hier wird die BlogOverviewList gerendert -->
+            <div id="blog-overview-container"></div>
+
+        </div>
+    </main>
+
+    <div id="footer-container" class="w-full shrink-0 pb-6 pl-4 md:pl-16 pr-4 md:pr-16 border-t border-subtle bg-surface/30"></div>
+    <!-- Slots für Shortlist-FAB und Sidebar (werden per JS befüllt) -->
+    <div id="shortlist-button-container"></div>
+    <div id="right-sidebar-container"></div>
+</div>
+
+</body>
+</html>

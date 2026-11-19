@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title><![CDATA[du-it Blog]]></title>
+    <link>https://www.du-it.de</link>
+    <description><![CDATA[Freiberuflicher Senior Softwareentwickler für Java, Spring Boot, Microservices, Hexagonale Architektur & Cloud.]]></description>
+    <language>de-de</language>
+    <atom:link href="https://www.du-it.de/rss.xml" rel="self" type="application/rss+xml" />
+    
+        <item>
+            <title><![CDATA[Java Streams: Inaktive Konten effizient entfernen]]></title>
+            <link>https://www.du-it.de/blog-article.html?post=remove-inactive-accounts</link>
+            <description><![CDATA[Effiziente Bereinigung von Konten in großen Datensätzen.]]></description>
+            <pubDate>Tue, 25 Feb 2025 00:00:00 GMT</pubDate>
+            <guid>https://www.du-it.de/blog-article.html?post=remove-inactive-accounts</guid>
+        </item>
+</channel>
+</rss>

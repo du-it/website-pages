@@ -1,0 +1,17 @@
+{
+  "id": "<gleicher Name wie der Ordner, z.B. remove-inactive-accounts>",
+  "title": "<{categoryLabel}: Worum geht es?>",
+  "category": "<id aus assets/blog-index.json:categories.id, z.B. java, kotlin, architektur, ki, blockchain>",
+  "categoryLabel": "<übergeordnetes Thema>",
+  "date": "JJJJ-MM-TT",
+  "updated": "JJJJ-MM-TT",
+  "readTime": "<Zahl> <Abkürzung der Zeiteinheit, z.B. 5 Min.>",
+  "excerpt": "<prägnante Zusammenfassung>",
+  "author": "<Vorname Nachname>",
+  "contentPath": "posts/<category aus assets/blog-index.json:categories.id>/<folder_name>/<folder_name>.html",
+  "takeaways": [
+    "<Konkreter Lerneffekt 1>",
+    "<Konkreter Lerneffekt 2>",
+    "..."
+  ]
+}

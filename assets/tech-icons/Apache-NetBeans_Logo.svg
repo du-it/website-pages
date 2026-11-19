@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="444" height="512" viewBox="0 0 444 512">
+    <title>Apache NetBeans Logo</title>
+    <g fill="none" fill-rule="evenodd" stroke-width="0">
+        <path fill="#a1c535" d="M222 0v99L86 178 0 128z"/>
+        <path fill="#add439" d="m444 128-86 50-136-79V0z"/>
+        <path fill="#1b6ac6" d="m444 384-86-50V178l86-50z"/>
+        <path fill="#2e90e8" d="M222 512v-99l136-79 86 50z"/>
+        <path fill="#ea205e" d="m0 384 86-50 136 79v99z"/>
+        <path fill="#a5073e" d="m0 128 86 50v156L0 384z"/>
+        <path fill="#f1f6e2" d="m86 178 136-79 136 79-136 78z"/>
+        <path fill="#cedbe6" d="m222 256 136-78v156l-136 79z"/>
+        <path fill="#fff" d="m86 178 136 78v157L86 334z"/>
+    </g>
+</svg>

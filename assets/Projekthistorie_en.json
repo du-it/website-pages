@@ -1,0 +1,1102 @@
+[
+  {
+    "_readme": [
+      "=== GUIDE FOR PROJECT CARDS ===",
+      "",
+      "To display a logo or icon in the bottom right corner, you have two options:",
+      "",
+      "1. CLIENT LOGO (Image):",
+      "   Add the path to the key 'logoUrl'.",
+      "   Example: \"logoUrl\": \"/assets/logos/eon.svg\"",
+      "   (Place the files in the /public/assets/logos/ folder)",
+      "",
+      "2. TECH ICON (FontAwesome):",
+      "   Add the class name to the key 'icon'.",
+      "   Example: \"icon\": \"fa-brands fa-java\"",
+      "  or a path to a custom icon, e.g., \"icon\": \"/assets/tech-icons/my-icon.svg\"",
+      "",
+      "If you omit both (empty strings), \"fa-solid fa-file-code\" will be displayed by default.",
+      "ATTENTION: If you fill BOTH keys, 'logoUrl' will take precedence."
+    ]
+  },
+  {
+    "zeitraum": "04/2026-09/2026",
+    "kunde": "velpTEC",
+    "aufgabe": "Continuing education training AI/Blockchain/Cloud Specialist (ABC-Specialist)",
+    "beschreibung": "Expanding my long-standing Java BE profile to AI/Blockchain/Cloud Specialist. Python3 programming, Cloud Computing, Cryptography, Git / GitHub, Blockchain & DLT programming, Practical project Blockchain & DLT, Prompt Engineering, AI programming.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Python 3", "Solidity"],
+      "frameworks": ["hardhat"],
+      "platforms": ["Docker", "Kubernetes", "Vagrant"],
+      "tools": ["PyCharm", "velpTEC Learning Platform"]
+    },
+    "vorgehensweise": "self-taught, velpTEC Learning Platform",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "since 12/2025",
+    "kunde": "du-it",
+    "aufgabe": "Development of WordPress Plugins and my website",
+    "beschreibung": "Creation of my own web presence. Both WordPress and the available plugins in the FREE version are functionally limited. The missing functionality that I noticed while developing my own website is to be achieved through these XPro Layout Manager and Asset Engine plugins. This is about the possibility to display the contents of websites in different layouts in selectable designs (themes), which enables a different presentation of the website at certain times/occasions, such as Easter, Christmas ...and campaigns. This involves, on the one hand, the structural structure of the site through the use of layouts (Layout Manager based on XPro Theme Builder) through durations, and on the other hand, the presentation through the use of customized CSS and JavaScript assets and their management, so that not ALL created, but only the design/theme-specific assets are loaded.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Python", "VBA", "TypeScript", "JavaScript", "Tailwind", "CSS", "HTML","Solidity"],
+      "frameworks": ["WordPress"],
+      "platforms": [],
+      "tools": ["IntelliJ", "Visual Studio Code", "PhpStorm","Composer", "XDebug", "GitHub", "Copilot", "Gemini", "ChatGPT"]
+    },
+    "vorgehensweise": "self-taught",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "12/2025-04/2026",
+    "kunde": "E.On Grid Solutions GmbH",
+    "aufgabe": "Java Middleware Development",
+    "beschreibung": "Implementation of feature enhancements and bug fixes in the Customer Information Service as part of the migration to Spring Boot 4. Contribution to the modernization of the application by integrating Spring Boot-based authentication mechanisms (Bearer Token, Basic Auth, etc.) to secure sensitive endpoints like Actuator. Implementation of shifting authentication responsibilities from the Azure App Service to the Spring Boot application according to architectural requirements. Application of AI-supported reverse engineering methods in the context of disaster recovery to reconstruct system artifacts and generate Infrastructure-as-Code definitions (Terraform, BMAD). Participation in domain storytelling activities for the structured documentation of legacy system knowledge in Jira.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 21", "Java 25"],
+      "frameworks": ["Spring Boot 3.x", "Spring Boot 4"],
+      "platforms": ["MS Azure", "App Service"],
+      "tools": ["GitHub Copilot", "IntelliJ", "Visual Studio Code", "Jib", "BMAD", "IaC", "Jira", "Confluence", "MS Teams", "Azure Insights", "OAuth2", "Postman", "Docker", "Maven", "GitLab", "Artifactory jFrog"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "20",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "01/2025-12/2025",
+    "kunde": "du-it",
+    "aufgabe": "Further training, personal projects and trading: Self-taught study of Python (Dataquest); setup and operational execution of crypto trading strategies; market analysis; import of trading CSVs into tax tool (Blockpit) via VBA scripts/macros; introduction to AI: n8n, website creation",
+    "beschreibung": "Self-taught training: Dataquest Learning Path (Python / Data Analysis); completed modules and platform certificates (see LinkedIn); development and execution of trading-related workflows; self-taught study in technical chart analysis (YouTube, exchange courses); application of chart tools and indicators for signal detection; development of VBA macros and scripts for transforming CSV exports from crypto exchanges into the import format of Blockpit.io. Self-taught training: AI, n8n Technical basics of Blockchain and Distributed Ledger Technologies Creation of Smart Contracts with Solidity Website creation with WordPress/Elementor",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Python", "VBA", "TypeScript", "Solidity"],
+      "frameworks": ["WordPress/Elementor"],
+      "platforms": ["Docker", "OpenAI", "Ethereum Sepolia Network"],
+      "tools": ["Jupyter Notebooks", "TradingAPIs", "Excel/CSV", "TradingView", "Exchange-specific tools", "n8n", "Remix DIE", "Etherscan"]
+    },
+    "vorgehensweise": "Iterative development and testing with real exchange exports",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "11/2024-12/2024",
+    "kunde": "Future Training & Consulting GmbH",
+    "aufgabe": "Preparation/course for Spring Certified Professional certification (2V0-72.22)",
+    "beschreibung": "Course with exam for Spring Certified Professional.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java"],
+      "frameworks": ["Spring Boot 3", "Spring Framework 6"],
+      "platforms": [],
+      "tools": ["IntelliJ"]
+    },
+    "vorgehensweise": "self-taught",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "10/2024-11/2024",
+    "kunde": "Future Training & Consulting GmbH",
+    "aufgabe": "Preparation/course for OCP Java 17 certification (1Z0-829)",
+    "beschreibung": "Course with exam for certified OCP Java 17 programmer.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 17"],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["IntelliJ"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "04/2023-04/2024",
+    "kunde": "Vaillant Group",
+    "aufgabe": "Further development and testing of the B2B PartnerNet.",
+    "beschreibung": "The Vaillant Group's internet offering is divided into a B2B and B2C area. The PartnerNet of the B2B area is being refactored and optimized. Country-specific circumstances must be taken into account, and REST APIs/interfaces and middleware services must be developed/adapted. Analysis of malfunctions of own and surrounding systems as well as raising issues with stakeholders. DevOps tasks regarding test/build automation with GitHub Actions. Planning/estimation of user stories, tasks, ...Kaizen for continuous improvement of procedures.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 11", "Java 17"],
+      "frameworks": ["Spring Boot 2.7.11", "Spring Boot 3.1.1", "Microservices"],
+      "platforms": ["MS Azure BlobStorage", "Kubernetes"],
+      "tools": ["Copilot", "GitHub/GitHub Actions", "OpenApi 3.0", "ELK", "Azureit", "MinIO", "Swagger", "Docker", "Maven", "Slack", "Zoom", "MS Teams", "Jira", "Confluence", "Bitbucket", "Salesforce", "FirstSpirit", "Jenkins", "Terraform", "Helm", "Postman", "IntelliJ", "Git"]
+    },
+    "vorgehensweise": ["Scrum", "Pair programming"],
+    "teamgroesse": "15",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "11/2021 – 07/2022",
+    "kunde": "Toll CollectT-Systems",
+    "aufgabe": "Further development and testing of DAP, IntP, BAGS, EPA.",
+    "beschreibung": "The area developed/supported by T-Systems includes the middleware components DAP, IntP, EPA and BAGS, via whose APIs/interfaces data and documents regarding information relevant to toll collection are received and forwarded. A wide variety of documents are exchanged via SOAP. Planning/estimation of user stories, tasks, ...Kaizen for continuous improvement of procedures.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 8", "Java 11", "Java 17", "Python"],
+      "frameworks": ["Spring Boot 2.3.1", "SOAP", "Apache Camel", "Apache Wicket", "Apache Karaf", "CXF"],
+      "platforms": ["Jboss", "Red Hat Fuse", "OpenShift"],
+      "tools": ["OpenShift CLI", "Ansible", "Apache JMeter", "XML", "JSON", "GitLab CI/CD", "git-subrepo", "SoapUI", "Jolokia", "Splunk", "Prometheus", "Thanos", "Grafana", "Artifactory jFrog", "Oracle XE", "SQL Developer", "KeePass", "Maven", "WebEx", "Jira", "Confluence", "IntelliJ", "Git", "SVN"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "15",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "07/2021 – 10/2022",
+    "kunde": "TransnetBW",
+    "aufgabe": "Redispatch 2.0:\nFurther development and testing of the REST API for data exchange between market participants.",
+    "beschreibung": "Communication between market participants in the energy sector is regulated and must meet corresponding requirements, including the Grid Expansion Acceleration Act (NABEG). The complex processing and communication paths use APIs/interfaces such as: AWS S3 Buckets, AWS SQS, SFTP, REST, email for exchanging packed and encrypted files (Mutual TLS, SSL, Trust-/KeyStore, ...). Fixing vulnerabilities in the code. Further development of the system's REST API according to the requirements from user stories across team boundaries.\nDevOps: Creation of bi-weekly releases. Planning/estimation of user stories, tasks, spikes, ...Kaizen for continuous improvement of procedures.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 11", "Java 17"],
+      "frameworks": ["Spring Cloud", "Spring Boot 2.6.9", "Spring Actuator", "REST", "OpenApi 3.0"],
+      "platforms": ["AWS S3", "AWS SQS", "Kubernetes", "OpenShift", "Cassandra"],
+      "tools": ["Swagger", "JSON", "XML", "Liquibase", "ZooKeeper", "Apache Kafka", "Maven", "Mockito", "WireMock", "LocalStack", "aws-cli", "Pact", "Junit", "AssertJ", "RestAssured", "Testcontainers", "Jenkins", "Teams", "Jira", "Confluence", "bitbucket", "SonarQube", "IntelliJ", "Git"]
+    },
+    "vorgehensweise": "Scrum, KANBAN",
+    "teamgroesse": "35",
+    "projektsprache": "German",
+    "position": "Developer/Lead Developer API Team"
+  },
+  {
+    "zeitraum": "07/2021 – 09/2021",
+    "kunde": "Brunata-Metrona GmbH",
+    "aufgabe": "Support in the further development of the MDS software.",
+    "beschreibung": "Measurement data from sensors for consumption measurement are read digitally in remote maintenance. The data must then be decoded, mapped and ultimately persisted. Creation of microservices for REST APIs with Open Feign. Planning/estimation of user stories, tasks, spikes, ...Kaizen for continuous improvement of procedures.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 15"],
+      "frameworks": ["Spring Boot 2.4.3", "Spring Cloud Open Feign", "Caching Caffeine", "Swagger", "OpenApi 3.0"],
+      "platforms": ["MongoDb"],
+      "tools": ["JIRA", "miro Retros", "Gitlab", "Gradle", "CI/CD", "Jenkins", "JSON", "Teams", "Docker", "Testcontainers", "Junit", "AssertJ", "Mockito", "WireMock", "Checkstyle", "Jib", "IntelliJ", "Git"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "10",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "10/2020 – 12/2020",
+    "kunde": "Axom Software GmbH – Forhims(USA)",
+    "aufgabe": "Testing and further development of the Electronic Medical Reporting (EMR) system.",
+    "beschreibung": "As part of a migration to transfer business logic from the DB layer to the application layer for the EMR, bugs must be fixed and new features implemented. Furthermore, an application for admission questionnaires for patients must be implemented in a greenfield project.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 11", "Kotlin 1.4.10"],
+      "frameworks": ["Spring Boot 2.2.2", "http4k", "Exposed", "Swagger", "OpenApi 3.0"],
+      "platforms": ["Amazon SQS", "Aptible"],
+      "tools": ["IntelliJ", "JIRA", "GitHub", "Gradle", "Maven", "Circle CI", "JSON", "Slack", "DataDog", "ktlint", "Junit", "MockK", "Mockito", "Websockets", "Git"]
+    },
+    "vorgehensweise": "Kanban",
+    "teamgroesse": "11",
+    "projektsprache": "English",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "10/2019 – 04/2020",
+    "kunde": "Medici Living Group – HubSpot Integration",
+    "aufgabe": "Implementation of microservices; HubSpot integration",
+    "beschreibung": "Further development/new development of features. Integration and automatic synchronization of the internal backend with the used CRM 'HubSpot'.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 12"],
+      "frameworks": ["Spring Boot 2.0.6", "HATEOAS", "OAuth2", "RabbitMQ", "Swagger"],
+      "platforms": ["Consul"],
+      "tools": ["IntelliJ", "JIRA", "Confluence", "Bitbucket", "Maven", "CI/CD", "Jenkins", "Postman", "Slack", "HubSpot API", "JSON", "webhook", "Junit", "Mockito", "Git"]
+    },
+    "vorgehensweise": "Kanban",
+    "teamgroesse": "5",
+    "projektsprache": "English",
+    "position": "Developer, Integrator, Tester"
+  },
+  {
+    "zeitraum": "06/2019 – 08/2019",
+    "kunde": "Vattenfall – Various Portals",
+    "aufgabe": "Implementation of features for Vattenfall portals",
+    "beschreibung": "Further development and troubleshooting of the Vattenfall portals.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 8"],
+      "frameworks": ["Spring Boot 1.5.2", "Thymeleaf", "Hibernate", "MapStruct"],
+      "platforms": ["Docker", "Kubernetes"],
+      "tools": ["IntelliJ", "JIRA", "Confluence", "Bitbucket", "Maven", "Oracle SQL Developer", "Teams", "Junit", "YAML", "CI/CD", "Jenkins", "Git"]
+    },
+    "vorgehensweise": "Kanban",
+    "teamgroesse": "4",
+    "projektsprache": "German",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "04/2019 – 05/2019",
+    "kunde": "GVL – Produktdatenverarbeitung",
+    "aufgabe": "Implementation of workers for multi-stage matching",
+    "beschreibung": "Co-development of a preprocessor (worker) for processing and persisting delivered raw data for royalty billing in a microservice architecture involving Camunda.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 8"],
+      "frameworks": ["Spring Boot 2.1.3", "Spring Data", "Camunda BPM", "Microservices"],
+      "platforms": ["Docker"],
+      "tools": ["IntelliJ", "JIRA", "Confluence", "Maven", "gitlab", "JUnit", "Mockito", "CI/CD", "Jenkins", "Git"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "7",
+    "projektsprache": "German",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "12/2018 – 03/2019",
+    "kunde": "Siemens – ConfigTool SiSHIP",
+    "aufgabe": "Development of a configuration tool for reading CSV files; Migration from Jazz to JIRA",
+    "beschreibung": "Engineers are to be given a tool with which they can read, edit and save CSV files for the backend. The tool supports this by using various validation rules. Previously, Jazz was used as a collaboration tool. The data accumulated there is to be migrated to JIRA, for which a script is to be created in Python.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["C#", "Python 3.7.2"],
+      "frameworks": ["WPF", "XAML"],
+      "platforms": [],
+      "tools": ["VisualStudio", "Circuit", "Jazz", "JIRA", "Git"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "7",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "07/2018 – 10/2018",
+    "kunde": "Zalando – Process-Template_Engine",
+    "aufgabe": "Process Template Engine (PTE) optimization",
+    "beschreibung": "In a microservice architecture, various adjustments and new developments are to be made. PTE: - Removal of no longer required event attributes - Resilience: Caching of received events prior to processing to eliminate the risk of data loss in the event of an error",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.8"],
+      "frameworks": ["SpringBoot 1.4.1"],
+      "platforms": ["Docker", "Postgres 10"],
+      "tools": ["IntelliJ", "Maven", "JUnit", "Mockito", "YAML", "Developer Console (Zalando Tool)", "HipChat", "Hangouts", "dbVisualizer", "pgAdmin4", "Git"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "7",
+    "projektsprache": "English",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "07/2018 – 08/2018",
+    "kunde": "OTTO – DACAPO",
+    "aufgabe": "Extension of the DACAPO tool",
+    "beschreibung": "The DACAPO tool must be adapted to legal requirements, whereby certain key figures must be made (in)visible to certain users.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.8"],
+      "frameworks": ["JEE (JSF / PrimeFaces)"],
+      "platforms": ["Tomcat"],
+      "tools": ["Eclipse", "Maven", "Git"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "3",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "02/2018 – 05/2018",
+    "kunde": "]init[ – DIN Beuth",
+    "aufgabe": "Relaunch of the DIN Beuth website",
+    "beschreibung": "Adjustments to the CoreMedia templates for the relaunch of the website must be made, including settings in the CMS itself.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7", "SASS", "CSS"],
+      "frameworks": ["CoreMedia 7", "Freemarker"],
+      "platforms": [],
+      "tools": ["Eclipse", "IDEA IntelliJ", "SVN"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "9",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "02/2018 – 04/2018",
+    "kunde": "ETC Transport Consultants – ConnectionPool",
+    "aufgabe": "Analysis and evaluation of a connection pool for the application landscape",
+    "beschreibung": "The applications at ETC have so far connected directly to their database(s) via JDBC or are web applications running in Tomcat and using the Tomcat JDBC ConnectionPool. Thus, non-web applications are excluded from connection pooling. The aim is to analyze which connection pooling solutions exist, which solution is suitable for ETC, and then use it. Furthermore, monitoring of the connection pool must be ensured. Prior to this, a SWOT analysis of existing connection pools must be carried out.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.8"],
+      "frameworks": ["Hikari CP", "TDD", "Junit"],
+      "platforms": [],
+      "tools": ["Eclipse", "Git"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "2",
+    "projektsprache": "German",
+    "position": "Analyst, Developer"
+  },
+  {
+    "zeitraum": "12/2017 – 07/2018",
+    "kunde": "VW Nutzfahrzeuge – JIRA2KPM",
+    "aufgabe": "Synchronization of JIRA tickets with the group's own KPM tool",
+    "beschreibung": "Due to the collaboration of several teams using different ticketing systems, synchronization of the two tools is necessary. Tickets from JIRA must be exported (REST API/interface) and imported into KPM (SOAP API/interface) and vice versa. A mapping of the respectively used fields (JIRA / KPM) must be carried out.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.8"],
+      "frameworks": ["JEE (JAX-WS)", "SOAP", "WSDL", "SpringBoot 1.5.10", "Logback"],
+      "platforms": [],
+      "tools": ["Eclipse", "Maven", "JSON", "JIRA", "Confluence", "TDD", "Junit", "Mockito", "PowerMockito", "KPM", "Postman", "Slack", "Git"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "3",
+    "projektsprache": "German/English",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "02/2017 – 11/2017",
+    "kunde": "Postcon – Tool Transition und Migration",
+    "aufgabe": "Transition of Postcon tools from Hanover to Berlin",
+    "beschreibung": "Until now, the self-developed tools of Postcon were maintained in Hanover. These are to be transferred to Berlin and further/newly developed there. In addition, the tools are migrated from SVN to Git and from NetBeans to Maven projects and, if necessary, to Java 8, and refactored (conversion from JDBC → JPA, ...). Further development of the in-house development Tomato, incl. REST API, web/microservices in Domain Driven Design (DDD).",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7", "Java 1.8"],
+      "frameworks": ["JEE (JPA)", "Spring MVC", "Spring Shell", "REST-API", "Microservices", "DDD"],
+      "platforms": ["Docker", "Docker-Compose", "Docker-Machine", "Docker Swarm", "PostgreSql", "Oracle", "VirtualBox"],
+      "tools": ["IDEA IntelliJ", "JNLP", "Maven", "Redmine", "CI/CD", "Jenkins", "Nexus", "FlyWay", "Postman", "PgAdmin III", "Slack", "TestRail", "Swagger", "TDD", "Junit", "Mockito", "PowerMockito", "Cucumber", "cURL", "arc42", "Git"]
+    },
+    "vorgehensweise": "Scrum",
+    "teamgroesse": "6",
+    "projektsprache": "German/English",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "08/2016 - 02/2017",
+    "kunde": "Parental Leave",
+    "aufgabe": "Fulfillment of educational and family duties.",
+    "beschreibung": "Feeding the prototype with suitable input material, cleaning up the processing garbage, designing and applying a cute presentation layer, training audio outputs, developing the mobile app(aratus), ...",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": ["BDD", "BabyDrivenDesign"],
+      "platforms": [],
+      "tools": ["Changing table", "Diapers", "Wet wipes", "Diaper pail", "Crib", "Milk bottle", "Baby food", "Pacifier", "Bib", "High chair"]
+    },
+    "vorgehensweise": "BDD, BabyDrivenDesign",
+    "teamgroesse": "7",
+    "projektsprache": "German",
+    "position": "Team Lead, Product Owner, Developer, Quality Assurance"
+  },
+  {
+    "zeitraum": "06/2016 – 07/2016",
+    "kunde": "DBRent – Mobility Service Provider (MSP)",
+    "aufgabe": "Implementation of services for mobility products (cars, bicycles, ...)",
+    "beschreibung": "A solution previously implemented in PHP4 has already been partially ported to Java and is to be extended. The existing RESTful API/interface is to be automatically documented using Swagger.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.8"],
+      "frameworks": ["RESTful API", "Swagger", "Hibernate"],
+      "platforms": ["Docker", "MySql", "MongoDB", "WildFly"],
+      "tools": ["Maven", "Eclipse", "JIRA", "Confluence", "CI/CD", "Jenkins", "RabbitMQ", "FlyWay", "Kitematic", "Git", "Gerrit", "Tortoise"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "6",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "03/2016 – 04/2016",
+    "kunde": "Corussoft – Messe Köln",
+    "aufgabe": "Implementation of a hall plan.",
+    "beschreibung": "Implementation of a hall plan.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7"],
+      "frameworks": ["GWT 2.7"],
+      "platforms": [],
+      "tools": ["Maven", "Eclipse", "JIRA", "Confluence", "BitBucket", "Git"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "4",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "10/2015 – 11/2015",
+    "kunde": "Rakuten – RATO (Rakuten AdWords Traffic Optimizer)",
+    "aufgabe": "Implementation of an application for the automated updating of products for Google AdWords campaigns.",
+    "beschreibung": "Implementation of an API for Product Listing Ads (Google AdWords).",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7"],
+      "frameworks": ["Spring AMQP", "Spring Rabbit", "Hibernate", "Quartz", "JPA", "Spring MVC"],
+      "platforms": ["RabbitMQ", "MySql"],
+      "tools": ["Maven", "IDEA IntelliJ", "TDD", "Junit", "SonarQube", "CI/CD", "Jenkins", "JIRA", "Confluence", "LiquiBase", "MySql Workbench", "UpSource", "Git"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "English, German",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "07/2014 – 07/2015",
+    "kunde": "T-Systems – EOBR",
+    "aufgabe": "Design and implementation of a large web application for fleet management incl. integration of tachographs / Electronic On-Board Recorder.",
+    "beschreibung": "Implementation of the specification and defect processing. Modeling of SOAP-based web services in Enterprise Architect, generation of XSD and WSDL files, implementation of web services, configuration of access via CXF servlet, deployment on a WSO2 server, creation of class and sequence diagrams. Scrum methodology. Optimization of the performance of existing database operations.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.6"],
+      "frameworks": ["JEE (Servlet, JPA)", "EclipseLink", "Dozer", "Spring 3.10", "Apache CXF", "SOAP", "WSDL"],
+      "platforms": ["WSO2", "MySql"],
+      "tools": ["Maven", "Eclipse", "Polarion", "Jira", "Confluence", "TDD", "JUnit", "Enterprise Architect", "PuTTY", "WinSCP", "SoapUI", "LiquiBase", "MySql Workbench", "SVN", "Tortoise", "GIT", "Gerrit"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "30",
+    "projektsprache": "English, German",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "04/2014 – 07/2014",
+    "kunde": "T-Systems – Schaufenster Niedersachsen",
+    "aufgabe": "Design and implementation of REST/SOAP interfaces between the IT systems of external service providers and IKTP based on WSO2 products (API Manager).",
+    "beschreibung": "Collaboration in the 'Schaufenster Niedersachsen' project, setup and extension of the IKTP platform with an interface (ParkManager) to the IT service provider of a parking garage operator to realize a pilot for VW (mobility card). Scrum methodology. Optimization of the performance of existing database operations.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7"],
+      "frameworks": ["J2EE (JPA)", "Dozer"],
+      "platforms": ["MySql", "VirtualBox", "Ubuntu"],
+      "tools": ["Eclipse", "TDD", "JUnit", "SVN", "SmartGIT"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "6",
+    "projektsprache": "German",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "12/2013 – 02/2014",
+    "kunde": "interactive tools – GKV-Dialog",
+    "aufgabe": "Portal/Portlet development",
+    "beschreibung": "A platform is being developed for a large association in the healthcare sector to fulfill statutory requirements. It is necessary to develop different areas for the members in which discussions on circulars etc. can take place. The topics dealt with on this platform are provided by different systems such as Optimal Systems and FirstSpirit and published via Liferay.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7"],
+      "frameworks": ["Liferay", "Spring MVC", "Optimal Systems", "FirstSpirit"],
+      "platforms": ["MySql", "TOMCAT"],
+      "tools": ["Liferay Developer Studio", "JIRA", "Confluence", "SVN"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "08/2013 – 11/2013",
+    "kunde": "Flexcellence – Mobilitätskarte (MoKa)",
+    "aufgabe": "Design and implementation of the backend for a smartphone app (iOS) of a globally leading German automobile manufacturer.",
+    "beschreibung": "A backend is to be designed and implemented which can communicate on the one hand with an iOS smartphone and on the other hand with the web services of a third-party provider in order to find and book charging stations for charging eCars as well as parking spaces. For this purpose, the corresponding interfaces must be defined/implemented. Scrum methodology.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7"],
+      "frameworks": ["RESTful Webservices", "Spring MVC", "Spring Data", "J2EE (JPA)"],
+      "platforms": ["iOS", "MySql", "TOMCAT"],
+      "tools": ["Eclipse", "Spring Tool Suite", "JUnit", "Jira", "Confluence", "TDD", "GIT"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "6",
+    "projektsprache": "German",
+    "position": "Developer, Tester"
+  },
+  {
+    "zeitraum": "05/2013 – 06/2013",
+    "kunde": "socialmeta – Ticketing System",
+    "aufgabe": "Implementation of tools and modules for a ticketing system",
+    "beschreibung": "A system for recording ticket bookings based on Java is to be developed to replace the existing PHP solution.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.6"],
+      "frameworks": ["Hibernate", "Spring MVC"],
+      "platforms": ["MySql", "TOMCAT"],
+      "tools": ["TDD", "JUnit", "SVN"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "3",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "02/2012 – 12/2012",
+    "kunde": "Landesbank Berlin – Aprico",
+    "aufgabe": "DB migration, application migration, further development.",
+    "beschreibung": "A legacy system (Aprico) must be migrated to a state-of-the-art system (Capricorn), while further developments are still being made in parallel for both systems. A previously used Berkeley XML DB is migrated to Oracle. Development of tools for certificate trading.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.6"],
+      "frameworks": ["Berkeley XML DB", "Oracle XML DB", "XPath", "XQuery", "XSchema"],
+      "platforms": ["Oracle", "Jboss"],
+      "tools": ["TDD", "JUnit", "ClearCase"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "10/2011 – 02/2012",
+    "kunde": "td-digital – PAP",
+    "aufgabe": "Development of services for the PAP (Personal Auto Portal).",
+    "beschreibung": "The PAP is a portal that offers various services related to cars. Liferay is used here. For this purpose, I developed an I18N catalog service; this can contain and manage system-defined as well as customer-created entries. In addition, I developed generators for the language.properties as well as the CSV parsing.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.7", "JSP"],
+      "frameworks": ["Liferay", "ServiceBuilder", "Hibernate", "Spring 3"],
+      "platforms": ["MySQL"],
+      "tools": ["ANT", "AntTasks", "PMD", "Hudson", "SVN", "Tortoise"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "02/2011 – 07/2011",
+    "kunde": "LandesBank Berlin – SKP",
+    "aufgabe": "Interface development with Talend. As part of the migration to a new core banking system, interfaces must be adapted/created and defects fixed.",
+    "beschreibung": "Development and adaptation of banking interfaces based on interface descriptions using the ETL tool Talend. Development of an application for initial filling of tables for interface/job management.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.6"],
+      "frameworks": ["Talend"],
+      "platforms": ["Oracle"],
+      "tools": ["Eclipse", "SQL", "HP Quality Center", "Subversion", "Tortoise"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "2",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "07/2010 – 12/2010",
+    "kunde": "Bayer Business Services – Portalentwicklung",
+    "aufgabe": "Maintenance and further development of the intranet portal of Bayer Schering Pharma AG.",
+    "beschreibung": "API implementation of the business logic for user and document management, which is used in internal applications.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.3"],
+      "frameworks": ["IBM Websphere Portal Server"],
+      "platforms": ["Oracle"],
+      "tools": ["IBM RAD", "IBM Websphere Application Server", "CVS"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "02/2010 – 04/2010",
+    "kunde": "Auconet – PSM – DataManager (Port Security Manager)",
+    "aufgabe": "Conception and implementation of an application for importing and exporting database values.",
+    "beschreibung": "A manager for exporting information from a PSM database is to be conceived and implemented and expanded with import functionality in a further step.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.6"],
+      "frameworks": ["Quartz Scheduler", "Spring Remoting", "Swing", "jGoodies Binding", "jGoodies Forms"],
+      "platforms": ["PostgreSQL"],
+      "tools": ["Eclipse", "CA Spectrum OneClick", "Subversion SVN"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer, Concept Designer"
+  },
+  {
+    "zeitraum": "09/2008 – 06/2009",
+    "kunde": "T-Systems – SMI (Service Maintenance Information)",
+    "aufgabe": "Conception and implementation of further development as well as redesign of the application for distributing advance information for maintenance.",
+    "beschreibung": "PMA-SMI is the central maintenance information system of T-Systems, which receives maintenance information from other systems of the group (partly only indirectly). PMA-SMI is to replace older, still existing systems. Current errors must be fixed and extensions implemented. Furthermore, a harmonization of the previously individual data transfer solutions is to be eliminated and a uniform interface created.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.5", "Java 1.6", "PL/SQL"],
+      "frameworks": ["Struts", "JEE (Servlets, JSP)"],
+      "platforms": ["Oracle", "TOMCAT"],
+      "tools": ["Eclipse", "WinCVS"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "3",
+    "projektsprache": "German",
+    "position": "Developer, Concept Designer"
+  },
+  {
+    "zeitraum": "03/2008 – 08/2008",
+    "kunde": "Siemens AG, Power Generation (PG) – Parts Tracking",
+    "aufgabe": "The CSTS (Component Serialization and Traceability System) application is available on the internet to both internal users and external suppliers. The external suppliers use the application to provide the manufactured blades with serial numbers and to virtually track the physical delivery and receipt. Internal users maintain such data or take over data maintenance completely for smaller suppliers.",
+    "beschreibung": "An existing web application is to be remotely controlled via a client tool to be developed and thus made available offline. When going online, the stored actions are to be transmitted. For this purpose, the possible input parameters must be read out, cached, presented to the user and then corresponding forms must be filled out and submitted programmatically.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.5", "Java 1.6"],
+      "frameworks": ["Swing"],
+      "platforms": ["HSQLDB"],
+      "tools": ["NetBeans", "HtmlUnit", "ClearCase"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "07/2006 – 12/2007",
+    "kunde": "Siemens Network GmbH & Co. KG – Checklisten / Ni-Applikation / ComplianceList / Nokia Siemens Network GmbH & Co. KG – ReportApp / PortalApp / AdminTool",
+    "aufgabe": "Checklists: Refactoring and further development of the in-house checklists for quality assurance of projects. Ni-Application: (NI = Network Integration) further development ComplianceList: Refactoring of the application ReportApplication: Creation of cockpit reports",
+    "beschreibung": "Checklists: The checklist application used in project management (intranet) is being revised and further developed. Ni-Application: see above. ComplianceList: The existing application had to be refactored due to scalability problems. ReportApplication: An application must be created for the management level in order to generate specific reports. PortalApplication: The portal application developed for access to other applications had to be maintained and extended by further functionality. AdminTool: The AdminTool application had to be maintained and extended by further functionality.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.5", "JSP", "JSTL"],
+      "frameworks": ["Spring 1.2.8", "Hibernate 3.1.3"],
+      "platforms": ["MS Sql Server"],
+      "tools": ["Eclipse", "Tortoise/SVN", "iText", "SQL Query Analyzer", "SQL Enterprise Manager"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "10/2005 – 06/2006",
+    "kunde": "DB Systems – Feinspezifikation, Architektur Schnittstelle SPI",
+    "aufgabe": "Specification, design and implementation of the interface between application software and hardware components (terminals/machines)",
+    "beschreibung": "To make Deutsche Bahn more independent of the manufacturers of hardware components/terminals (mobile terminals, VTA, receipt printers, barcode scanners, ..., but also door switches, alarms, ...), a standardized interface called SPI (Service Provider Interface) is to be developed. The integration of completely new devices should be possible with little effort. For this purpose, the existing detailed concept is revised and extended. The specified interface is modeled with a design tool (Sparx Systems Enterprise Architect) using UML and then implemented. The designed interface is delivered to the device manufacturers in an SDK (Software Development Kit) for implementing the predefined methods. The object-oriented implementation (OOP) is extended by using aspect-oriented programming (AOP) with the help of AspectJ 5. The scope of the SDK also includes a test framework based on JUnit, Swing and SWT, conceived and implemented by me. Creation of JUnit test cases.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4.2"],
+      "frameworks": ["AspectJ (AOP)", "SWT", "Swing", "JUnit", "Log4j"],
+      "platforms": [],
+      "tools": ["UML", "Sparx Systems Enterprise Architect", "Visual Source Safe", "Lotus Notes"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "7",
+    "projektsprache": "German",
+    "position": "Concept Designer, Designer, Developer"
+  },
+  {
+    "zeitraum": "04/2005 – 06/2005",
+    "kunde": "I-D Media AG – SQL-Transformation/Promotion im Web",
+    "aufgabe": "Porting from DB2-SQL to MS SQL Server-SQL and JSP creation for evaluating creations.",
+    "beschreibung": "A Java application developed for web promotion purposes was developed DB2-specifically. This is to be rewritten for use with an MS SQL Server RDMS and extended by features for uploading media data for voting. The database must be modified accordingly. Implementation of views and controllers (JSP, Servlets) for user registration, user profile maintenance, media uploads, voting, administration, also using Java web services.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4.2", "J2EE (Servlets, JSP, JSTL)"],
+      "frameworks": ["SOAP", "Java Webservices", "Hibernate"],
+      "platforms": ["DB2", "MS SQL Server"],
+      "tools": ["UML", "Eclipse", "CVS", "Log4j", "JUnit"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "3",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "12/2004 – 03/2005",
+    "kunde": "Lufthansa Systems Berlin GmbH – Interface ProfitLine/Price",
+    "aufgabe": "Implementation of the interface to ProfitLine/Price.",
+    "beschreibung": "Fare information from another system is imported offline (file) using the interface to be developed in order to predict/estimate revenues (revenue management). The data from the import file is still incomplete and must be supplemented or reconciled with data already in the target system and ultimately imported into the database.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4.2"],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["UML", "Eclipse", "keeptool Hora", "MKS Integrity", "Log4j", "JUnit"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "08/2004 – 11/2004",
+    "kunde": "Hoffmann ITC – Mesonic WINLine®-Applikationen",
+    "aufgabe": "Implementation of additional modules for users of Mesonic WINLine®.",
+    "beschreibung": "Development of various additional applications for users of Mesonic WINLine® (ERP). These applications can be called up as external applications from within WINLine®, but have the same appearance as WINLine® itself.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4.2"],
+      "frameworks": ["Swing"],
+      "platforms": [],
+      "tools": ["Eclipse", "Mesonic WINLine"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "05/2004 – 11/2004",
+    "kunde": "Siemens AG – IN@vantage Features für Mobilfunkbetreiber",
+    "aufgabe": "Development of various features for mobile network operators.",
+    "beschreibung": "Implementation of features for mobile phone tariffs of one of the largest German mobile network operators. E.g. for tariff design and/or for limited-time promotion purposes, charging. Profiling / performance optimization.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4.2"],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["JBuilder", "OptimizeIt", "ClearCase"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": ">5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "04/2004 – 05/2004",
+    "kunde": "Siemens AG – TraceAnalyzer",
+    "aufgabe": "Development of an analysis tool for trace files as a standalone application.",
+    "beschreibung": "To process support requests in the mobile communications sector, trace/log files must be searched. These are written by the servers involved in a connection and have no order in terms of sequence. The TraceAnalyzer groups the individual traces in order to arrange all traces belonging to a call clearly and to offer the supporter comfortable support in processing the request. Among other things, the supporter is supported by various views (text or table) and search functions (using regular expressions).",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4.2"],
+      "frameworks": ["Swing"],
+      "platforms": [],
+      "tools": ["JBuilder", "ClearCase"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "01/2004 – 03/2004",
+    "kunde": "Novartis AG – Enterprise Portal",
+    "aufgabe": "Creation of an Enterprise Portal prototype.",
+    "beschreibung": "The various web offerings of Novartis AG Switzerland are to be consolidated through an enterprise portal. The existing websites are used as a template for the migration to the portal solution, which is used for the intranet, which is why corresponding users are set up, entitlements set, and the required desktops configured.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java", "JSP", "JavaScript", "HTML", "CSS"],
+      "frameworks": ["WebServices"],
+      "platforms": ["BEA Weblogic Platform"],
+      "tools": ["CVS", "Interwoven"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "2",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "08/2003 – 12/2003",
+    "kunde": "Siemens Dematic (Royal Mail) – Systemintegration",
+    "aufgabe": "Integration of system software for the (world's largest) J2EE-driven logistics/postal distribution center. Leadership of an international test team.",
+    "beschreibung": "Execution of integration tests in the Office of Exchange of Royal Mail / postal/material automation. Test cases were defined, tests were planned, coordinated, executed, and test results evaluated as well as errors analyzed. Execution of code reviews. Configuration and commissioning of IT equipment.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java", "J2EE"],
+      "frameworks": [],
+      "platforms": ["Oracle"],
+      "tools": ["CCCHarvest", "BugTracker", "PL/SQL-Developer", "Eclipse", "Borland Applicationserver"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": ">100",
+    "projektsprache": "English",
+    "position": "System Integrator, Team Lead"
+  },
+  {
+    "zeitraum": "03/2003 – 08/2003",
+    "kunde": "hellonetwork/stream solutions – VideoMailSystem",
+    "aufgabe": "Porting the existing application to another platform and extending the functionality.",
+    "beschreibung": "The already existing application is to be ported to a Linux-MySQL platform. The application is extended, for example, by an activation function and thus the database design is extended accordingly, as well as the necessary JSPs and the underlying model/controller classes.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4", "J2EE (JSP, Servlets, JDBC)", "XML"],
+      "frameworks": ["Struts"],
+      "platforms": ["Linux", "MySql", "TOMCAT"],
+      "tools": ["Log4j", "JBuilder"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "11/2002 – 03/2003",
+    "kunde": "Fresenius Netcare - Krankenhausverwaltung",
+    "aufgabe": "Implementation of bed management in hospital administration.",
+    "beschreibung": "Implementation of the requirements of the technical concept regarding bed management of the Medtranet® hospital administration. Any modification is carried out vertically through the entire system from the GUI via RMI to the application server and on to database communication.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.4", "XML"],
+      "frameworks": [],
+      "platforms": ["Oracle"],
+      "tools": ["Log4j", "Ant", "TOAD", "JBuilder", "CVS"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "06/2002 – 07/2002",
+    "kunde": "Dawacon (Activest) – Fondsverwaltung",
+    "aufgabe": "Creation of a browser-based management system for investment funds.",
+    "beschreibung": "Implementation of the user interface with HTML, JavaScript, CSS and JSP as well as implementation of the client communication via a servlet which communicates with an Oracle 8 database using JDBC. TOMCAT was installed and configured as the servlet engine to be used, in which the front controller servlet was registered.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["HTML4", "JavaScript", "CSS", "Java 1.3", "J2EE (Servlet, JSP, JDBC)", "XML"],
+      "frameworks": [],
+      "platforms": ["Oracle", "TOMCAT", "Resin"],
+      "tools": ["Log4j", "Ant"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "5",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "09/2001 – 03/2002",
+    "kunde": "Cronon (S-Bahn) – Kundenintranet",
+    "aufgabe": "Conception and implementation of templates as well as holding workshops.",
+    "beschreibung": "Templates for the setup and later expansion of the intranet in the corporate design are created for the customer.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["HTML4", "JavaScript", "CSS"],
+      "frameworks": [],
+      "platforms": ["MS SQL-Server"],
+      "tools": ["RedDot"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Concept Designer/Developer"
+  },
+  {
+    "zeitraum": "09/2000 – 07/2001",
+    "kunde": "SPM (Deutsche Post) – Kundenkarte 2000",
+    "aufgabe": "Object-oriented design of the specifications from the object-oriented analysis as well as subsequent implementation of the GUI using servlets using EJB and participation in the development of the middleware (EJB). In this context, a BEA WebLogic Application Server was set up and configured according to the requirements.",
+    "beschreibung": "The customer card is intended to serve process optimization with regard to the customer interface and for marketing purposes, as well as to support cross-selling. The use cases determined during the OOA were further processed in the OOD in UML notation in order to ultimately be able to carry out the implementation in Java from the determined class diagrams (OOP). The entire system runs in a cluster environment of BEA WebLogic Application Servers.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 2.1", "J2EE (Servlets, EJB)", "JavaScript", "XML"],
+      "frameworks": [],
+      "platforms": ["BEA WebLogic"],
+      "tools": ["Together", "HTMLKona", "JBuilder", "Visual SourceSafe", "Ant"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "45",
+    "projektsprache": "German",
+    "position": "Designer/Developer"
+  },
+  {
+    "zeitraum": "03/2000 – 07/2000",
+    "kunde": "KinderCampus AG – Redaktionstool",
+    "aufgabe": "Development of an editorial tool for searching, evaluating and storing internet addresses in a database. Development of an associated administration tool.",
+    "beschreibung": "The Swing-based GUI is to enable the storage of internet addresses in a database via RMI using JDBC. The MySQL database was designed and implemented. In addition, an administration tool was developed for the distribution of ToDos and the maintenance of the database inventory.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.2.2"],
+      "frameworks": ["JDBC", "RMI", "Swing"],
+      "platforms": ["MySQL"],
+      "tools": ["ICE Browser"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "2",
+    "projektsprache": "German",
+    "position": "Team Lead/Developer"
+  },
+  {
+    "zeitraum": "02/2000 – 02/2000",
+    "kunde": "Netquote – MostWanted-Servlet",
+    "aufgabe": "Graphical representation of the most requested securities.",
+    "beschreibung": "A servlet is to be developed to display the securities that have been most frequently requested. For this purpose, an XML file is to be read and a database query executed. The developed servlet is registered via JServ with the Apache Application Server used.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 2.0", "J2EE (Servlet)", "XML"],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["Apache Web Server", "Apache JServ"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "01/2000 – 02/2000",
+    "kunde": "Netquote – Informationen per WAP",
+    "aufgabe": "Securities prices as well as further information such as news, indices, etc. should be retrievable via WAP mobile phones.",
+    "beschreibung": "Servlets are to be developed to provide WML files (Ver. 1.1) for display on WAP mobile phones. The prices are provided with the help of the Sink Source Library. The developed servlets are registered via JServ with the Apache Application Server used.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 2.0", "J2EE (Servlet)", "WML"],
+      "frameworks": ["Reuters SSL (Sink Source Library)", "JSFC"],
+      "platforms": [],
+      "tools": ["Apache Web Server", "Apache JServ", "Nokia WAP-Toolkit"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "12/1999 – 01/2000",
+    "kunde": "Aquadrat – Chatserver",
+    "aufgabe": "Development and implementation of a chat server.",
+    "beschreibung": "A chat server that is already in use is to be extended. Existing chat clients must be taken into account with regard to compatibility.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.1.7", "Java 1.0.2"],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["MS Personal Web Server", "UltraEdit"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "07/1999 – 10/1999",
+    "kunde": "SDC (Grundkreditbank)– Objektbogen",
+    "aufgabe": "Development and implementation of a server for database communication and for creating dynamic HTML pages.",
+    "beschreibung": "Replacement of a semi-automatic procedure for evaluating real estate secured loans with a Java-based system. The high number of clients required implementation using an applet to keep the installation effort minimal.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.1.7"],
+      "frameworks": [],
+      "platforms": ["Solaris", "Sun Web Server"],
+      "tools": ["Visual Age for Java"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "4",
+    "projektsprache": "German",
+    "position": "Developer"
+  },
+  {
+    "zeitraum": "02/1999 – 06/1999",
+    "kunde": "SDC (WeberBank) - Jahr-2000-Fähigkeit",
+    "aufgabe": "Ensuring year 2000 compliance.",
+    "beschreibung": "Development of an Access database for inventorying Y2K-relevant hardware and software and creation of a change management system. Conducting interviews.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["MS Access"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "3",
+    "projektsprache": "German",
+    "position": "Developer, Inventory Manager"
+  },
+  {
+    "zeitraum": "01/1999 – 02/1999",
+    "kunde": "SDC - Projektmanagement-Informationssystem (PM IS)",
+    "aufgabe": "Design of an ER model.",
+    "beschreibung": "The PM IS serves to optimize internal project processing and support quality assurance through modules such as time tracking, project management, invoicing, etc. For the time tracking module, it was necessary to create an ER model.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["ER-Win"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "System Analyst, Developer"
+  },
+  {
+    "zeitraum": "03/1998 – 09/1998",
+    "kunde": "Tembit Software - TemCashX–Portfoliomanager",
+    "aufgabe": "Porting a commercial ActiveX development to Java 1.1 and extending it with database functionality via JDBC (diploma thesis).",
+    "beschreibung": "TemCashX – Portfolio Manager is an internet application of the internet banking offering of Tembit Software GmbH and serves for securities management for decision support. The solution to be developed in Java had to be designed and implemented after the existing version was analyzed under object-oriented aspects. To extend the functionality, a suitable database model was created and the database designed from it.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.1"],
+      "frameworks": ["JDBC"],
+      "platforms": ["MS Access"],
+      "tools": ["JBuilder", "Erwin"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "System Analyst, Developer"
+  },
+  {
+    "zeitraum": "01/1998 – 03/1998",
+    "kunde": "Tembit Software - TemCashX–StockView",
+    "aufgabe": "New development of the version existing as ActiveX Control with Java (JDK 1.0.2)",
+    "beschreibung": "TemCashX – StockView is an internet application of the internet banking offering of Tembit Software GmbH and serves to visualize historical stock price trends in the form of price charts. The solution to be developed in Java had to be designed and implemented after the existing version was analyzed under object-oriented aspects.",
+    "logoUrl": "",
+    "icon": "",
+    "techStack": {
+      "languages": ["Java 1.0.2"],
+      "frameworks": [],
+      "platforms": [],
+      "tools": ["Kawa"]
+    },
+    "vorgehensweise": "",
+    "teamgroesse": "1",
+    "projektsprache": "German",
+    "position": "Developer"
+  }
+]

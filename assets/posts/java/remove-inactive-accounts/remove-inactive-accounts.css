@@ -1,0 +1,159 @@
+/* ==========================================================================
+   POST-SPEZIFISCHE STYLES – remove-inactive-accounts
+   ========================================================================== */
+
+/* =========================================
+   ARTIKEL-TEXT (Erzwingt kompakte Größen und Serif für H2)
+   ========================================= */
+
+.article-body p {
+    font-family: var(--font-sans), sans-serif !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-muted) !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.article-body h2 {
+    font-family: var(--font-serif), serif !important;
+    font-size: 1.75rem !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    color: var(--color-text-primary) !important;
+    border-bottom: 1px solid var(--color-border-subtle) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.article-body ul, .article-body ol {
+    font-family: var(--font-sans), sans-serif !important;
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin-bottom: 1.25rem !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-muted) !important;
+}
+
+.article-body li {
+    margin-bottom: 0.5rem !important;
+}
+
+.article-body strong {
+    font-weight: 600 !important;
+    color: var(--color-text-primary) !important;
+}
+
+.article-body em, .article-body i {
+    font-style: italic !important;
+}
+
+/* =========================================
+   INLINE-CODE (z.B. in einem Textabsatz)
+   ========================================= */
+
+.article-body p code,
+.article-body li code,
+.article-body h2 code {
+    font-family: var(--font-mono), monospace !important;
+    font-size: 0.85em !important;
+    background-color: var(--color-surface) !important;
+    color: #0891b2 !important;
+    padding: 0.1rem 0.3rem !important;
+    border-radius: 0.25rem !important;
+    border: 1px solid var(--color-border-subtle) !important;
+}
+
+html.dark .article-body p code,
+html.dark .article-body li code,
+html.dark .article-body h2 code {
+    color: #22d3ee !important;
+}
+
+/* =========================================
+   INFO-TOOLTIP
+   ========================================= */
+
+.info-tooltip-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 0.15rem !important;
+    cursor: pointer !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #0284c7 !important;
+    transition: color 0.2s ease !important;
+    vertical-align: super !important;
+}
+
+.info-tooltip-btn:hover {
+    color: #0369a1 !important;
+}
+
+.info-tooltip-btn svg {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
+}
+
+html.dark .info-tooltip-btn {
+    color: #38bdf8 !important;
+}
+
+html.dark .info-tooltip-btn:hover {
+    color: #7dd3fc !important;
+}
+
+/* =========================================
+   SPEZIELLE BOXEN (Exkurs, Howto, Benchmark)
+   ========================================= */
+
+.article-excursion {
+    background-color: #f0f9ff !important;
+    border: 1px solid #bae6fd !important;
+    padding: 1.5rem !important;
+    border-radius: 0.75rem !important;
+    margin: 2rem 0 !important;
+}
+html.dark .article-excursion {
+    background-color: rgba(8, 47, 73, 0.2) !important;
+    border-color: rgba(12, 74, 110, 0.5) !important;
+}
+
+.article-howto {
+    background-color: #f0f9ff !important;
+    padding: 1rem !important;
+    border-radius: 0.5rem !important;
+    margin: 1.5rem 0 !important;
+    border-left: 4px solid #0ea5e9 !important;
+}
+html.dark .article-howto {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+.article-benchmark {
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 1.5rem !important;
+    border-radius: 0.75rem !important;
+    margin: 2rem 0 !important;
+}
+html.dark .article-benchmark {
+    background-color: rgba(15, 23, 42, 0.8) !important;
+    border-color: rgba(51, 65, 85, 0.6) !important;
+}
+
+/* =========================================
+   SPEZIFISCHE KONSOLEN-AUSGABE FÜR DIESEN POST
+   ========================================= */
+
+.console-log__stream { color: #38bdf8; font-weight: 600; }
+.console-log__inplace { color: #34d399; font-weight: 600; }
+.console-log__verify { color: #38bdf8; font-weight: 600; }
+.console-log__time-stream { color: #fbbf24; }
+.console-log__time-inplace { color: #34d399; }
+.console-log__mem-stream { color: #fbbf24; font-weight: 600; }
+.console-log__mem-inplace { color: #34d399; font-weight: 600; }
+.console-log__muted { color: #64748b; }

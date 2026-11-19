@@ -1,0 +1,107 @@
+[
+  {
+    "id": "enterprise-ai",
+    "visible": false,
+    "categoryIcon": "fa-brain",
+    "categoryTitle": "KI & LLM-Integration",
+    "title": "Enterprise KI mit Spring AI & LLM-Integration",
+    "description": "Auseinandersetzung mit LLM-Schnittstellen, RAG-Pipelines und KI-gestützten Developer-Workflows für die tägliche Praxis.",
+    "banner": {
+      "tag": "Tech-Fokus • KI & Prompting",
+      "title": "Generative KI im Backend-Kontext verstehen",
+      "text": "Wie lassen sich KI-Komponenten sinnvoll in eine Java-Architektur einbetten? Ich nutze diese Themen, um strukturierte Prompts, typsichere Transformationen und den praktischen Einsatz von Spring AI in eigenen kleinen Szenarien zu testen.",
+      "buttonText": "Fragen oder Austausch?",
+      "buttonHref": "#contact"
+    },
+    "cards": [
+      {
+        "title": "AI-Driven Developer Velocity",
+        "icon": "fa-bolt",
+        "text": "Einsatz von <strong>GitHub Copilot, Claude, Gemini & ChatGPT</strong> im täglichen Entwickler-Workflow. Beschleunigung von TDD-Zyklen, Testdatengenerierung und komplexen Refactorings.",
+        "tags": ["AI-Assisted Coding", "Prompt Engineering"]
+      },
+      {
+        "title": "Structured Output & Spring AI",
+        "icon": "fa-code",
+        "text": "Orchestrierung von LLM-Schnittstellen via <strong>Spring AI</strong>. Typsichere Transformation unstrukturierter Prompts auf <strong>Java 21 Records</strong> und Hexagonale Adapter.",
+        "tags": ["Spring AI", "Structured Outputs", "LLM Output Parsing"]
+      },
+      {
+        "title": "Inhouse Wissensintegration",
+        "icon": "fa-database",
+        "text": "Konzeption von lokalen Daten-Pipelines und Inhouse-Wissensdatenbanken für LLMs. Testweise Anbindung von relationalen Datenbanken und Speicherung von Embeddings für kontextbezogene Abfragen.",
+        "tags": ["RAG", "Vector Search"]
+      }
+    ]
+  },
+  {
+    "id": "enterprise-dlt",
+    "visible": true,
+    "categoryIcon": "fa-link",
+    "categoryTitle": "Blockchain & DLT",
+    "title": "Blockchain & Distributed Ledger (DLT)",
+    "description": "Architekturstudien, Schnittstellenanalysen und unveränderliche Audit-Log-Konzepte für Backend-Systeme.",
+    "banner": {
+      "tag": "Tech-Fokus • Dezentrale Systeme",
+      "title": "DLT & Smart-Contract-Anbindungen verstehen und umsetzen",
+      "text": "Fälschungssichere Protokolle und dezentrale Datenstrukturen sind architektonisch spannend. Hier schaue ich mir an, wie sich EVM-basierte Netze via Java-Bibliotheken anbinden lassen und wie kryptografische Prüfsummen im Backend funktionieren.",
+      "buttonText": "Fragen oder Austausch?",
+      "buttonHref": "#contact"
+    },
+    "cards": [
+      {
+        "title": "Java Backend Integration (Web3j)",
+        "icon": "fa-link",
+        "text": "Anbindung von EVM-basierten Blockchains an Spring Boot Microservices. Erzeugung von Java-Wrappern für die Interaktion mit Smart Contracts via JSON-RPC.",
+        "tags": ["Web3j", "JSON-RPC"]
+      },
+      {
+        "title": "Cryptographic Proofs & Auditing",
+        "icon": "fa-shield-halved",
+        "text": "Konzeption unveränderlicher Audit-Logs in Unternehmensanwendungen mittels Hash-Bäumen (Merkle Trees) und kryptografischer Signaturverfahren.",
+        "tags": ["Merkle Trees", "Auditability"]
+      },
+      {
+        "title": "Event Indexing & Off-Chain Data",
+        "icon": "fa-network-wired",
+        "text": "Architekturmuster zur asynchronen Erfassung von On-Chain Events und deren Übertragung in relationale Datenbanken für performante Read-Zugriffe.",
+        "tags": ["Event Listener", "Event Indexing", "Off-Chain Oracle"]
+      }
+    ]
+  },
+  {
+    "id": "cra-sdlc",
+    "visible": false,
+    "categoryIcon": "fa-shield-halved",
+    "categoryTitle": "CRA & Secure SDLC",
+    "title": "EU Cyber Resilience Act (CRA) & Secure SDLC",
+    "description": "Architektonische Vorbereitung von Spring Boot Backends auf automatisierte Software Bill of Materials (SBOM) und Zero-Vulnerability-Pipelines.",
+    "banner": {
+      "tag": "Tech-Fokus • CRA Readiness, Security & Compliance",
+      "title": "Security-by-Design & Compliance im Build-Prozess",
+      "text": "Regulatorische Anforderungen wie der Cyber Resilience Act verändern den Blick auf Software-Lieferketten. Ich beschäftige mich damit, wie rechtliche Vorgaben und technische Umsetzung in Java-Entwicklungsprozesse eingebettet werden können. Professionelle Begleitung erhalte ich durch die <a href=\"https://www.resilienz.gmbh/de/start/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-emerald-400 hover:text-emerald-300 underline underline-offset-4 transition-colors font-medium\">Resilienz GmbH</a>.",
+      "buttonText": "Fragen oder Austausch?",
+      "buttonHref": "#contact"
+    },
+    "cards": [
+      {
+        "title": "Automated SBOM Integration",
+        "icon": "fa-file-contract",
+        "text": "Generierung lückenloser Software Bill of Materials (CycloneDX / SPDX) direkt im Maven/Gradle Build-Prozess zur Erfüllung von Transparenzvorgaben.",
+        "tags": ["SBOM", "Supply Chain Security", "CycloneDX", "SPDX"]
+      },
+      {
+        "title": "Shift-Left Vulnerability Scanning",
+        "icon": "fa-bug",
+        "text": "Frühzeitige Erkennung von CVEs im Entwicklungsprozess durch Integration von Snyk, Trivy oder Dependency-Check in CI/CD-Pipelines.",
+        "tags": ["CVE Scanning", "CI/CD Guardrails"]
+      },
+      {
+        "title": "Spring Security & Hardening",
+        "icon": "fa-user-shield",
+        "text": " Absicherung von REST-Endpoints, Token-basierte Validierung (OAuth2 / OIDC) und Härtung von Spring Boot Microservices nach bewährten Standards.",
+        "tags": ["OAuth2/OIDC", "OWASP", "Spring Security"]
+      }
+    ]
+  }
+]

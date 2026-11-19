@@ -1,0 +1,35 @@
+# Standard: Alle Crawler erlauben (für klassische Suchmaschinen)
+User-agent: *
+Allow: /
+
+# --- KI-SUCHE ERLAUBEN (für Zitierungen und Traffic) ---
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# --- KI-TRAINING VERBIETEN (Inhalte nicht als Trainingsmaterial) ---
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Hinweis zu ClaudeBot: Er wird für Suche UND Training genutzt.
+# Wenn du in Claude-Antworten erscheinen willst, muss er erlaubt bleiben.
+# Um das Training zu verbieten, müsstest du ihn blockieren (Disallow: /).
+# Wir erlauben ihn vorerst, um die Sichtbarkeit zu maximieren.
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://www.du-it.de/sitemap.xml
